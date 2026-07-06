@@ -11,6 +11,7 @@ import Input from "../ui/Input";
 import StarRating from "../ui/StarRating";
 import StatusBadge from "./StatusBadge";
 import DrawerHeader from "./DrawerHeader";
+import SourceFieldset from "./SourceFieldset";
 import ContactFieldset from "./ContactFieldset";
 import TechStackField from "./TechStackField";
 import DrawerActions from "./DrawerActions";
@@ -85,6 +86,14 @@ export default function CompanyDrawer({
         />
 
         <FormField
+          label="Website languages"
+          editable={authed}
+          value={form.languages}
+          onChange={(v) => set("languages", v)}
+          placeholder="e.g. English, French, Dutch"
+        />
+
+        <FormField
           label="Description"
           editable={authed}
           as="textarea"
@@ -147,6 +156,8 @@ export default function CompanyDrawer({
               )
             ))}
         </div>
+
+        <SourceFieldset form={form} editable={authed} onChange={set} />
 
         <ContactFieldset form={form} editable={authed} onChange={set} />
 

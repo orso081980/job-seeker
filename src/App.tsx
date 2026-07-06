@@ -10,13 +10,21 @@ import KanbanBoard from "./components/company/KanbanBoard";
 import CompanyDrawer from "./components/company/CompanyDrawer";
 import AddCompanyModal from "./components/company/AddCompanyModal";
 import LoginModal from "./components/auth/LoginModal";
+import SourcingPage from "./components/sourcing/SourcingPage";
 
 export default function App() {
-  const { companies, loading, error, create, update, remove } = useCompanies();
+  const { companies, loading, error, create, update, remove, addLocal } = useCompanies();
   const { authed, login, logout } = useAuth();
-  const { filters, setFilters, countries, industries, filtered } = useCompanyFilters(companies);
 
-  const [view, setView] = useState<"grid" | "kanban">("grid");
+  const newCompanies = companies.filter((c) => c.status === "new");
+  const progressCompanies = companies.filter((c) => c.status !== "new");
+
+  const home = useCompanyFilters(newCompanies);
+  const progress = useCompanyFilters(progressCompanies);
+
+  const [page, setPage] = useState<"companies" | "progress" | "sourcing">("companies");
+  const [homeView, setHomeView] = useState<"grid" | "kanban">("grid");
+  const [progressView, setProgressView] = useState<"grid" | "kanban">("grid");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [addOpen, setAddOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
@@ -37,8 +45,9 @@ export default function App() {
 
   const goHome = (e: MouseEvent) => {
     e.preventDefault();
-    setFilters(DEFAULT_FILTERS);
-    setView("grid");
+    home.setFilters(DEFAULT_FILTERS);
+    setHomeView("grid");
+    setPage("companies");
     setSelectedId(null);
     setAddOpen(false);
   };
@@ -48,39 +57,84 @@ export default function App() {
     setSelectedId(null);
   };
 
+  const handleLogout = async () => {
+    await logout();
+    setPage("companies");
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header
         companyCount={companies.length}
         jobCount={jobCount}
         authed={authed}
+        page={page}
         onGoHome={goHome}
-        onLogout={logout}
+        onProgressClick={() => setPage("progress")}
+        onSourcingClick={() => (authed ? setPage("sourcing") : setLoginOpen(true))}
+        onLogout={handleLogout}
         onLoginClick={() => setLoginOpen(true)}
       />
 
-      <FilterBar
-        filters={filters}
-        onChange={setFilters}
-        countries={countries}
-        industries={industries}
-        view={view}
-        onViewChange={setView}
-        onAdd={() => (authed ? setAddOpen(true) : setLoginOpen(true))}
-        resultCount={filtered.length}
-      />
-
-      <main className="flex-1">
-        {view === "grid" ? (
-          <CompanyGrid companies={filtered} onOpen={setSelectedId} />
-        ) : (
-          <KanbanBoard
-            companies={filtered}
-            onOpen={setSelectedId}
-            onStatusChange={(id, status) => update(id, { status })}
+      {page === "companies" && (
+        <>
+          <FilterBar
+            filters={home.filters}
+            onChange={home.setFilters}
+            countries={home.countries}
+            industries={home.industries}
+            view={homeView}
+            onViewChange={setHomeView}
+            onAdd={() => (authed ? setAddOpen(true) : setLoginOpen(true))}
+            resultCount={home.filtered.length}
           />
-        )}
-      </main>
+
+          <main className="flex-1">
+            {homeView === "grid" ? (
+              <CompanyGrid companies={home.filtered} onOpen={setSelectedId} />
+            ) : (
+              <KanbanBoard
+                companies={home.filtered}
+                onOpen={setSelectedId}
+                onStatusChange={(id, status) => update(id, { status })}
+              />
+            )}
+          </main>
+        </>
+      )}
+
+      {page === "progress" && (
+        <>
+          <FilterBar
+            filters={progress.filters}
+            onChange={progress.setFilters}
+            countries={progress.countries}
+            industries={progress.industries}
+            view={progressView}
+            onViewChange={setProgressView}
+            onAdd={() => (authed ? setAddOpen(true) : setLoginOpen(true))}
+            resultCount={progress.filtered.length}
+          />
+
+          <main className="flex-1">
+            {progressView === "grid" ? (
+              <CompanyGrid companies={progress.filtered} onOpen={setSelectedId} />
+            ) : (
+              <KanbanBoard
+                companies={progress.filtered}
+                onOpen={setSelectedId}
+                onStatusChange={(id, status) => update(id, { status })}
+              />
+            )}
+          </main>
+        </>
+      )}
+
+      {page === "sourcing" && (
+        <main className="flex-1">
+          <SourcingPage onPromoted={addLocal} />
+        </main>
+      )}
 
       <Footer />
 

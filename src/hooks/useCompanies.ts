@@ -31,5 +31,9 @@ export function useCompanies() {
     setCompanies((cs) => cs.filter((c) => c.id !== id));
   };
 
-  return { companies, loading, error, create, update, remove };
+  const addLocal = (company: Company) => {
+    setCompanies((cs) => [...cs, company]);
+  };
+
+  return { companies, loading, error, create, update, remove, addLocal };
 }

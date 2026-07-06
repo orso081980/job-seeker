@@ -1,4 +1,11 @@
-import type { Company, NewCompanyInput } from "../types";
+import type {
+  Company,
+  NewCompanyInput,
+  SourceResult,
+  SourceSearchParams,
+  SourceSearchResponse,
+  SourcedCompany,
+} from "../types";
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(url, {
@@ -36,6 +43,20 @@ export const api = {
     }),
   logout: () => request<{ authenticated: boolean }>("/api/logout", { method: "POST" }),
   session: () => request<{ authenticated: boolean }>("/api/session"),
+  sourcingSearch: (params: SourceSearchParams) =>
+    request<SourceSearchResponse>("/api/sourcing/search", {
+      method: "POST",
+      body: JSON.stringify(params),
+    }),
+  sourcingList: () => request<SourcedCompany[]>("/api/sourcing"),
+  sourcingAdd: (result: SourceResult) =>
+    request<SourcedCompany>("/api/sourcing", {
+      method: "POST",
+      body: JSON.stringify(result),
+    }),
+  sourcingRemove: (id: string) => request<void>(`/api/sourcing/${id}`, { method: "DELETE" }),
+  sourcingPromote: (id: string) =>
+    request<Company>(`/api/sourcing/${id}/promote`, { method: "POST" }),
 };
 
 export function microlinkScreenshotUrl(website: string): string {

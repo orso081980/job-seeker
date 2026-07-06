@@ -25,6 +25,10 @@ export interface Company {
   country: string;
   industry: string;
   description: string;
+  address: string;
+  mapsUrl: string;
+  searchQuery: string;
+  languages: string;
   status: Status;
   rating: number;
   notes: string;
@@ -45,3 +49,46 @@ export type NewCompanyInput = Pick<
   Company,
   "company" | "website" | "city" | "country" | "industry" | "description"
 >;
+
+export interface SourceSearchParams {
+  query: string;
+  city: string;
+  country: string;
+  pageToken?: string;
+}
+
+export interface SourceResult {
+  placeId: string;
+  company: string;
+  website: string;
+  address: string;
+  phone: string;
+  industry: string;
+  mapsUrl: string;
+  city: string;
+  country: string;
+  searchQuery: string;
+  alreadySourced: boolean;
+  alreadyTracked: boolean;
+}
+
+export interface SourceSearchResponse {
+  results: SourceResult[];
+  nextPageToken: string | null;
+  skipped: number;
+}
+
+export interface SourcedCompany {
+  id: string;
+  placeId: string;
+  company: string;
+  website: string;
+  city: string;
+  country: string;
+  industry: string;
+  address: string;
+  phone: string;
+  mapsUrl: string;
+  searchQuery: string;
+  createdAt: string;
+}

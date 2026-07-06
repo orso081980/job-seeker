@@ -6,24 +6,50 @@ export default function Header({
   companyCount,
   jobCount,
   authed,
+  page,
   onGoHome,
+  onProgressClick,
+  onSourcingClick,
   onLogout,
   onLoginClick,
 }: {
   companyCount: number;
   jobCount: number;
   authed: boolean;
+  page: "companies" | "progress" | "sourcing";
   onGoHome: (e: MouseEvent) => void;
+  onProgressClick: () => void;
+  onSourcingClick: () => void;
   onLogout: () => void;
   onLoginClick: () => void;
 }) {
+  const navCls = (active: boolean) =>
+    `rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
+      active
+        ? "bg-gray-100 text-ink-900 dark:bg-white/10 dark:text-canvas-100"
+        : "text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/10"
+    }`;
+
   return (
     <header className="sticky top-0 z-10 border-b border-gray-200 bg-white/90 shadow-sm backdrop-blur dark:border-white/10 dark:bg-ink-950/90">
       <div className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-start justify-between gap-3">
-          <a href="/" onClick={onGoHome} className="inline-flex w-fit">
-            <Logo />
-          </a>
+          <div className="flex items-center gap-2">
+            <a href="/" onClick={onGoHome} className="mr-2 inline-flex w-fit">
+              <Logo />
+            </a>
+            <nav className="hidden items-center gap-1 sm:flex">
+              <button onClick={onGoHome} className={navCls(page === "companies")}>
+                Companies
+              </button>
+              <button onClick={onProgressClick} className={navCls(page === "progress")}>
+                Progress
+              </button>
+              <button onClick={onSourcingClick} className={navCls(page === "sourcing")}>
+                Source companies
+              </button>
+            </nav>
+          </div>
           {authed ? (
             <Button variant="ghost" size="xs" onClick={onLogout}>
               Logged in as admin · Log out

@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Company } from "../../types";
 import { microlinkScreenshotUrl } from "../../api/client";
 import { countryFlag } from "../../utils/countryFlag";
-import { parseTechStack } from "../../utils/parseTechStack";
+import { parseTagList } from "../../utils/parseTagList";
 import StatusBadge from "./StatusBadge";
 import StarRating from "../ui/StarRating";
 
@@ -18,7 +18,8 @@ export default function CompanyCard({
   onDragStart?: (e: React.DragEvent) => void;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
-  const stackTags = parseTechStack(company.techStackNotes).slice(0, 4);
+  const stackTags = parseTagList(company.techStackNotes).slice(0, 4);
+  const languages = parseTagList(company.languages);
 
   return (
     <div
@@ -65,6 +66,14 @@ export default function CompanyCard({
             {[company.city, company.country].filter(Boolean).join(", ")}{" "}
             <span aria-hidden="true">{countryFlag(company.country)}</span>
           </span>
+          {languages.map((lang) => (
+            <span
+              key={lang}
+              className="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-600 dark:bg-white/10 dark:text-gray-300"
+            >
+              {lang}
+            </span>
+          ))}
         </div>
 
         <p className="line-clamp-2 text-sm text-gray-600 dark:text-gray-300">
