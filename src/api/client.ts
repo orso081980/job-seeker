@@ -1,0 +1,58 @@
+import type { Company, NewCompanyInput } from "../types";
+
+async function request<T>(url: string, options?: RequestInit): Promise<T> {
+  const res = await fetch(url, {
+    headers: { "Content-Type": "application/json" },
+    ...options,
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error ?? `Request failed: ${res.status}`);
+  }
+  if (res.status === 204) return undefined as T;
+  return res.json() as Promise<T>;
+}
+
+export const api = {
+  list: () => request<Company[]>("/api/companies"),
+  create: (input: NewCompanyInput) =>
+    request<Company>("/api/companies", {
+      method: "POST",
+      body: JSON.stringify(input),
+    }),
+  update: (id: string, patch: Partial<Company>) =>
+    request<Company>(`/api/companies/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(patch),
+    }),
+  remove: (id: string) =>
+    request<void>(`/api/companies/${id}`, { method: "DELETE" }),
+  detectStack: (website: string) =>
+    request<{ matches: string[] }>(`/api/detect-stack?url=${encodeURIComponent(website)}`),
+  login: (username: string, password: string) =>
+    request<{ authenticated: boolean }>("/api/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+    }),
+  logout: () => request<{ authenticated: boolean }>("/api/logout", { method: "POST" }),
+  session: () => request<{ authenticated: boolean }>("/api/session"),
+};
+
+export function microlinkScreenshotUrl(website: string): string {
+  const params = new URLSearchParams({
+    url: website,
+    screenshot: "true",
+    meta: "false",
+    embed: "screenshot.url",
+  });
+  return `https://api.microlink.io/?${params.toString()}`;
+}
+
+export function builtWithUrl(website: string): string {
+  try {
+    const host = new URL(website).hostname.replace(/^www\./, "");
+    return `https://builtwith.com/${host}`;
+  } catch {
+    return "https://builtwith.com/";
+  }
+}
