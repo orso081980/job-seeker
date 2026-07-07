@@ -14,12 +14,14 @@ export default function FilterSelects({
   countries,
   industries,
   resultCount,
+  showStatus = true,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
   countries: string[];
   industries: string[];
   resultCount: number;
+  showStatus?: boolean;
 }) {
   const set = <K extends keyof Filters>(key: K, value: Filters[K]) =>
     onChange({ ...filters, [key]: value });
@@ -48,18 +50,20 @@ export default function FilterSelects({
         ))}
       </Select>
 
-      <Select
-        value={filters.status}
-        onChange={(e) => set("status", e.target.value as Filters["status"])}
-        className={selectCls}
-      >
-        <option value="all">Status</option>
-        {STATUSES.map((s) => (
-          <option key={s.value} value={s.value}>
-            {s.label}
-          </option>
-        ))}
-      </Select>
+      {showStatus && (
+        <Select
+          value={filters.status}
+          onChange={(e) => set("status", e.target.value as Filters["status"])}
+          className={selectCls}
+        >
+          <option value="all">Status</option>
+          {STATUSES.map((s) => (
+            <option key={s.value} value={s.value}>
+              {s.label}
+            </option>
+          ))}
+        </Select>
+      )}
 
       <Select
         value={filters.sort}

@@ -32,14 +32,13 @@ export default function CompanyDrawer({
   const { form, set, saveState, saveError, saveAndClose } = useCompanyDraft(company, onUpdate, onClose);
 
   return (
-    <Drawer onBackdropClick={authed ? undefined : onClose}>
+    <Drawer onClose={onClose} onBackdropClick={authed ? undefined : onClose}>
       <DrawerHeader
         website={company.website}
         companyName={company.company}
         status={form.status}
         authed={authed}
         saving={saveState === "saving"}
-        onClose={onClose}
       />
 
       <div className="flex-1 space-y-5 p-5">
@@ -53,14 +52,35 @@ export default function CompanyDrawer({
           ) : (
             <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">{form.company}</p>
           )}
-          <a
-            href={form.website}
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-brand-600 hover:underline dark:text-brand-300"
-          >
-            {form.website} ↗
-          </a>
+          {authed ? (
+            <div className="flex items-center gap-2">
+              <Input
+                value={form.website}
+                onChange={(e) => set("website", e.target.value)}
+                className="!border-none !bg-transparent !p-0 text-sm text-brand-600 focus:outline-none dark:text-brand-300"
+                placeholder="https://example.com"
+              />
+              {form.website && (
+                <a
+                  href={form.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="shrink-0 text-xs text-gray-400 hover:underline dark:text-gray-500"
+                >
+                  Open ↗
+                </a>
+              )}
+            </div>
+          ) : (
+            <a
+              href={form.website}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-brand-600 hover:underline dark:text-brand-300"
+            >
+              {form.website} ↗
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-2 gap-3">

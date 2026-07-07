@@ -1,7 +1,6 @@
 import { microlinkScreenshotUrl } from "../../api/client";
 import type { Status } from "../../types";
 import StatusBadge from "./StatusBadge";
-import Button from "../ui/Button";
 
 export default function DrawerHeader({
   website,
@@ -9,14 +8,12 @@ export default function DrawerHeader({
   status,
   authed,
   saving,
-  onClose,
 }: {
   website: string;
   companyName: string;
   status: Status;
   authed: boolean;
   saving: boolean;
-  onClose: () => void;
 }) {
   return (
     <>
@@ -33,11 +30,6 @@ export default function DrawerHeader({
           <StatusBadge status={status} />
           {authed && <span className="text-xs text-gray-400">{saving && "Saving…"}</span>}
         </div>
-        {!authed && (
-          <Button variant="ghost" size="sm" onClick={onClose}>
-            Close ✕
-          </Button>
-        )}
       </div>
     </>
   );

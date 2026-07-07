@@ -11,20 +11,24 @@ import CompanyDrawer from "./components/company/CompanyDrawer";
 import AddCompanyModal from "./components/company/AddCompanyModal";
 import LoginModal from "./components/auth/LoginModal";
 import SourcingPage from "./components/sourcing/SourcingPage";
+import Pagination from "./components/ui/Pagination";
+
+const HOME_PAGE_SIZE = 28;
 
 export default function App() {
   const { companies, loading, error, create, update, remove, addLocal } = useCompanies();
   const { authed, login, logout } = useAuth();
 
-  const newCompanies = companies.filter((c) => c.status === "new");
   const progressCompanies = companies.filter((c) => c.status !== "new");
 
-  const home = useCompanyFilters(newCompanies);
+  const home = useCompanyFilters(companies);
   const progress = useCompanyFilters(progressCompanies);
 
-  const [page, setPage] = useState<"companies" | "progress" | "sourcing">("companies");
-  const [homeView, setHomeView] = useState<"grid" | "kanban">("grid");
+  const [page, setPage] = useState<"companies-grid" | "companies-kanban" | "progress" | "sourcing">(
+    "companies-grid"
+  );
   const [progressView, setProgressView] = useState<"grid" | "kanban">("grid");
+  const [homePage, setHomePage] = useState(1);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [addOpen, setAddOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
@@ -46,8 +50,8 @@ export default function App() {
   const goHome = (e: MouseEvent) => {
     e.preventDefault();
     home.setFilters(DEFAULT_FILTERS);
-    setHomeView("grid");
-    setPage("companies");
+    setHomePage(1);
+    setPage("companies-grid");
     setSelectedId(null);
     setAddOpen(false);
   };
@@ -59,7 +63,7 @@ export default function App() {
 
   const handleLogout = async () => {
     await logout();
-    setPage("companies");
+    setPage("companies-grid");
   };
 
   return (
@@ -70,28 +74,45 @@ export default function App() {
         authed={authed}
         page={page}
         onGoHome={goHome}
+        onGridClick={() => setPage("companies-grid")}
+        onKanbanClick={() => setPage("companies-kanban")}
         onProgressClick={() => setPage("progress")}
         onSourcingClick={() => (authed ? setPage("sourcing") : setLoginOpen(true))}
         onLogout={handleLogout}
         onLoginClick={() => setLoginOpen(true)}
       />
 
-      {page === "companies" && (
+      {(page === "companies-grid" || page === "companies-kanban") && (
         <>
           <FilterBar
             filters={home.filters}
-            onChange={home.setFilters}
+            onChange={(f) => {
+              home.setFilters(f);
+              setHomePage(1);
+            }}
             countries={home.countries}
             industries={home.industries}
-            view={homeView}
-            onViewChange={setHomeView}
             onAdd={() => (authed ? setAddOpen(true) : setLoginOpen(true))}
             resultCount={home.filtered.length}
+            showViewToggle={false}
           />
 
           <main className="flex-1">
-            {homeView === "grid" ? (
-              <CompanyGrid companies={home.filtered} onOpen={setSelectedId} />
+            {page === "companies-grid" ? (
+              <>
+                <CompanyGrid
+                  companies={home.filtered.slice(
+                    (homePage - 1) * HOME_PAGE_SIZE,
+                    homePage * HOME_PAGE_SIZE
+                  )}
+                  onOpen={setSelectedId}
+                />
+                <Pagination
+                  page={homePage}
+                  pageCount={Math.max(1, Math.ceil(home.filtered.length / HOME_PAGE_SIZE))}
+                  onChange={setHomePage}
+                />
+              </>
             ) : (
               <KanbanBoard
                 companies={home.filtered}

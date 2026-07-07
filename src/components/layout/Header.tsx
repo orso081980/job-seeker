@@ -8,6 +8,8 @@ export default function Header({
   authed,
   page,
   onGoHome,
+  onGridClick,
+  onKanbanClick,
   onProgressClick,
   onSourcingClick,
   onLogout,
@@ -16,8 +18,10 @@ export default function Header({
   companyCount: number;
   jobCount: number;
   authed: boolean;
-  page: "companies" | "progress" | "sourcing";
+  page: "companies-grid" | "companies-kanban" | "progress" | "sourcing";
   onGoHome: (e: MouseEvent) => void;
+  onGridClick: () => void;
+  onKanbanClick: () => void;
   onProgressClick: () => void;
   onSourcingClick: () => void;
   onLogout: () => void;
@@ -39,9 +43,16 @@ export default function Header({
               <Logo />
             </a>
             <nav className="hidden items-center gap-1 sm:flex">
-              <button onClick={onGoHome} className={navCls(page === "companies")}>
+              <span className="px-2 text-sm font-medium text-gray-400 dark:text-gray-500">
                 Companies
+              </span>
+              <button onClick={onGridClick} className={navCls(page === "companies-grid")}>
+                Grid
               </button>
+              <button onClick={onKanbanClick} className={navCls(page === "companies-kanban")}>
+                Kanban
+              </button>
+              <span className="mx-1 h-4 w-px bg-gray-200 dark:bg-white/10" aria-hidden="true" />
               <button onClick={onProgressClick} className={navCls(page === "progress")}>
                 Progress
               </button>

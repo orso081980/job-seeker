@@ -13,15 +13,19 @@ export default function FilterBar({
   onViewChange,
   onAdd,
   resultCount,
+  showStatus = true,
+  showViewToggle = true,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
   countries: string[];
   industries: string[];
-  view: "grid" | "kanban";
-  onViewChange: (v: "grid" | "kanban") => void;
+  view?: "grid" | "kanban";
+  onViewChange?: (v: "grid" | "kanban") => void;
   onAdd: () => void;
   resultCount: number;
+  showStatus?: boolean;
+  showViewToggle?: boolean;
 }) {
   return (
     <div className="border-b border-gray-200 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-ink-950/80">
@@ -34,10 +38,13 @@ export default function FilterBar({
           countries={countries}
           industries={industries}
           resultCount={resultCount}
+          showStatus={showStatus}
         />
 
         <div className="flex items-center gap-2">
-          <ViewToggle view={view} onChange={onViewChange} />
+          {showViewToggle && view && onViewChange && (
+            <ViewToggle view={view} onChange={onViewChange} />
+          )}
           <Button className="ml-auto" onClick={onAdd}>
             + Add company
           </Button>
