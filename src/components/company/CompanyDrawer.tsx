@@ -229,13 +229,13 @@ export default function CompanyDrawer({
         </div>
 
         <FormField
-          label="Redesign ideas / potential improvements"
+          label="Remarks and strategy"
           editable={authed}
           as="textarea"
           rows={4}
           value={form.notes}
           onChange={(v) => set("notes", v)}
-          placeholder="Outdated design, no mobile nav, missing CTA above the fold…"
+          placeholder="Best angle to approach them, outreach strategy, notes from calls…"
         />
 
         {authed && (

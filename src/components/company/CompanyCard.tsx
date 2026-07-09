@@ -5,6 +5,7 @@ import { countryFlag } from "../../utils/countryFlag";
 import { parseTagList } from "../../utils/parseTagList";
 import StatusBadge from "./StatusBadge";
 import StarRating from "../ui/StarRating";
+import TechStackTags from "./TechStackTags";
 
 export default function CompanyCard({
   company,
@@ -18,7 +19,6 @@ export default function CompanyCard({
   onDragStart?: (e: React.DragEvent) => void;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
-  const stackTags = parseTagList(company.techStackNotes).slice(0, 4);
   const languages = parseTagList(company.languages);
 
   return (
@@ -62,10 +62,23 @@ export default function CompanyCard({
               {company.industry}
             </span>
           )}
-          <span className="text-xs text-gray-500 dark:text-gray-400">
-            {[company.city, company.country].filter(Boolean).join(", ")}{" "}
-            <span aria-hidden="true">{countryFlag(company.country)}</span>
-          </span>
+          {company.mapsUrl ? (
+            <a
+              href={company.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-xs text-gray-500 hover:text-brand-600 hover:underline dark:text-gray-400 dark:hover:text-brand-300"
+            >
+              {[company.city, company.country].filter(Boolean).join(", ")}{" "}
+              <span aria-hidden="true">{countryFlag(company.country)}</span>
+            </a>
+          ) : (
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              {[company.city, company.country].filter(Boolean).join(", ")}{" "}
+              <span aria-hidden="true">{countryFlag(company.country)}</span>
+            </span>
+          )}
           {languages.map((lang) => (
             <span
               key={lang}
@@ -80,18 +93,7 @@ export default function CompanyCard({
           {company.description}
         </p>
 
-        {stackTags.length > 0 && (
-          <div className="flex flex-wrap gap-1">
-            {stackTags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded bg-brand-50 px-1.5 py-0.5 font-mono text-[10px] text-brand-700 dark:bg-brand-900/40 dark:text-brand-200"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        <TechStackTags value={company.techStackNotes} limit={4} />
 
         {company.projectUrl && (
           <a

@@ -33,7 +33,23 @@ export default function SourceFieldset({
         <div>
           <Label>Google Maps</Label>
           {editable ? (
-            <Input value={form.mapsUrl} onChange={(e) => onChange("mapsUrl", e.target.value)} />
+            <div className="flex items-center gap-2">
+              <Input
+                value={form.mapsUrl}
+                onChange={(e) => onChange("mapsUrl", e.target.value)}
+                placeholder="https://maps.google.com/…"
+              />
+              {form.mapsUrl && (
+                <a
+                  href={form.mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="shrink-0 text-xs text-gray-400 hover:underline dark:text-gray-500"
+                >
+                  Open ↗
+                </a>
+              )}
+            </div>
           ) : form.mapsUrl ? (
             <a
               href={form.mapsUrl}

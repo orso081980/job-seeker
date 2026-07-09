@@ -1,20 +1,20 @@
 export type Status =
   | "new"
-  | "researching"
+  | "maybe"
   | "contacted"
-  | "replied"
-  | "in_progress"
-  | "won"
-  | "lost";
+  | "connected"
+  | "proposition"
+  | "contracted"
+  | "declined";
 
 export const STATUSES: { value: Status; label: string }[] = [
   { value: "new", label: "New" },
-  { value: "researching", label: "Researching" },
+  { value: "maybe", label: "Maybe (to call later)" },
   { value: "contacted", label: "Contacted" },
-  { value: "replied", label: "Replied" },
-  { value: "in_progress", label: "In Progress" },
-  { value: "won", label: "Won" },
-  { value: "lost", label: "Lost" },
+  { value: "connected", label: "Connected" },
+  { value: "proposition", label: "Proposition" },
+  { value: "contracted", label: "Contracted" },
+  { value: "declined", label: "Declined" },
 ];
 
 export interface Company {
