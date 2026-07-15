@@ -1,3 +1,11 @@
+import { geocodeAddress } from "./geocode.js";
+
+export async function resolveLocationFromAddress(body) {
+  if (body.city || body.country || !body.address) return body;
+  const { city, country } = await geocodeAddress(body.address);
+  return { ...body, city, country };
+}
+
 export function slugify(s) {
   return s
     .toLowerCase()

@@ -13,10 +13,10 @@ export default function AddCompanyModal({
 }) {
   const [form, setForm] = useState<NewCompanyInput>({
     company: "",
-    website: "",
-    city: "",
-    country: "",
     industry: "",
+    address: "",
+    website: "",
+    contactPhone: "",
     description: "",
   });
   const [submitting, setSubmitting] = useState(false);
@@ -61,6 +61,14 @@ export default function AddCompanyModal({
           onChange={(v) => field("company", v)}
           autoFocus
         />
+        <FormField label="Industry" editable value={form.industry} onChange={(v) => field("industry", v)} />
+        <FormField
+          label="Address"
+          editable
+          value={form.address}
+          onChange={(v) => field("address", v)}
+          placeholder="123 Main St, City, Country"
+        />
         <FormField
           label="Website *"
           editable
@@ -68,11 +76,12 @@ export default function AddCompanyModal({
           onChange={(v) => field("website", v)}
           placeholder="https://…"
         />
-        <div className="grid grid-cols-2 gap-3">
-          <FormField label="City" editable value={form.city} onChange={(v) => field("city", v)} />
-          <FormField label="Country" editable value={form.country} onChange={(v) => field("country", v)} />
-        </div>
-        <FormField label="Industry" editable value={form.industry} onChange={(v) => field("industry", v)} />
+        <FormField
+          label="Phone"
+          editable
+          value={form.contactPhone}
+          onChange={(v) => field("contactPhone", v)}
+        />
         <FormField
           label="Description"
           editable

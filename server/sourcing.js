@@ -2,19 +2,22 @@ import express from "express";
 import { requireAuth } from "./auth.js";
 import { readSourced, writeSourced, readCompanies, writeCompanies } from "./store.js";
 import { searchPlaces } from "./places.js";
-import { slugify, domainOf, buildCompanyRecord } from "./util.js";
+import { slugify, domainOf, buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
 
 const router = express.Router();
 
 router.post("/api/sourcing/search", requireAuth, async (req, res) => {
-  const { query, city = "", country = "", pageToken } = req.body ?? {};
+  const { query, lat, lng, radiusMeters, pageToken } = req.body ?? {};
   if (!query || typeof query !== "string") {
     return res.status(400).json({ error: "query is required" });
+  }
+  if (typeof lat !== "number" || typeof lng !== "number" || !radiusMeters) {
+    return res.status(400).json({ error: "lat, lng and radiusMeters are required" });
   }
 
   try {
     const [{ places, nextPageToken }, sourced, companies] = await Promise.all([
-      searchPlaces({ query, city, country, pageToken }),
+      searchPlaces({ query, lat, lng, radiusMeters, pageToken }),
       readSourced(),
       readCompanies(),
     ]);
@@ -27,8 +30,6 @@ router.post("/api/sourcing/search", requireAuth, async (req, res) => {
       const domain = domainOf(p.website);
       return {
         ...p,
-        city,
-        country,
         searchQuery: query,
         alreadySourced: sourcedDomains.has(domain),
         alreadyTracked: trackedDomains.has(domain),
@@ -67,13 +68,14 @@ router.post("/api/sourcing", requireAuth, async (req, res) => {
     id = `${baseId}-${++n}`;
   }
 
+  const resolved = await resolveLocationFromAddress(body);
   const candidate = {
     id,
     placeId: body.placeId ?? "",
     company: body.company,
     website: body.website,
-    city: body.city ?? "",
-    country: body.country ?? "",
+    city: resolved.city ?? "",
+    country: resolved.country ?? "",
     industry: body.industry ?? "",
     address: body.address ?? "",
     phone: body.phone ?? "",
@@ -99,11 +101,12 @@ router.post("/api/sourcing/:id/promote", requireAuth, async (req, res) => {
   const candidate = sourced.find((s) => s.id === req.params.id);
   if (!candidate) return res.status(404).json({ error: "not found" });
 
+  const resolved = await resolveLocationFromAddress(candidate);
   const company = buildCompanyRecord(companies, {
     company: candidate.company,
     website: candidate.website,
-    city: candidate.city,
-    country: candidate.country,
+    city: resolved.city,
+    country: resolved.country,
     industry: candidate.industry,
     address: candidate.address,
     mapsUrl: candidate.mapsUrl,

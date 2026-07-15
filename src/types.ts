@@ -47,13 +47,14 @@ export interface Company {
 
 export type NewCompanyInput = Pick<
   Company,
-  "company" | "website" | "city" | "country" | "industry" | "description"
+  "company" | "industry" | "address" | "website" | "contactPhone" | "description"
 >;
 
 export interface SourceSearchParams {
   query: string;
-  city: string;
-  country: string;
+  lat: number;
+  lng: number;
+  radiusMeters: number;
   pageToken?: string;
 }
 
@@ -65,8 +66,8 @@ export interface SourceResult {
   phone: string;
   industry: string;
   mapsUrl: string;
-  city: string;
-  country: string;
+  lat?: number;
+  lng?: number;
   searchQuery: string;
   alreadySourced: boolean;
   alreadyTracked: boolean;

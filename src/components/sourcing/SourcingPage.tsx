@@ -1,9 +1,12 @@
+import { APIProvider } from "@vis.gl/react-google-maps";
 import { useSourcing } from "../../hooks/useSourcing";
 import type { Company } from "../../types";
 import SourceSearchForm from "./SourceSearchForm";
 import SourceResultCard from "./SourceResultCard";
 import ShortlistCard from "./ShortlistCard";
 import Button from "../ui/Button";
+
+const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
 
 export default function SourcingPage({ onPromoted }: { onPromoted: (company: Company) => void }) {
   const {
@@ -34,7 +37,15 @@ export default function SourcingPage({ onPromoted }: { onPromoted: (company: Com
       </div>
 
       <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-white/10 dark:bg-white/5">
-        <SourceSearchForm onSearch={search} searching={searching} />
+        {MAPS_API_KEY ? (
+          <APIProvider apiKey={MAPS_API_KEY}>
+            <SourceSearchForm onSearch={search} searching={searching} results={results} />
+          </APIProvider>
+        ) : (
+          <p className="text-sm text-amber-600 dark:text-amber-400">
+            Set <code>VITE_GOOGLE_MAPS_API_KEY</code> in your .env file to enable the location map.
+          </p>
+        )}
         {searchError && <p className="mt-3 text-sm text-red-600 dark:text-red-400">{searchError}</p>}
       </div>
 

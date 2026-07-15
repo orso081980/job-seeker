@@ -1,7 +1,7 @@
 import express from "express";
 import { readCompanies, writeCompanies } from "./store.js";
 import { requireAuth, registerAuthRoutes } from "./auth.js";
-import { buildCompanyRecord } from "./util.js";
+import { buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
 import { detectStack } from "./stackDetect.js";
 import sourcingRouter from "./sourcing.js";
 
@@ -22,7 +22,8 @@ app.post("/api/companies", requireAuth, async (req, res) => {
     return res.status(400).json({ error: "company and website are required" });
   }
   const companies = await readCompanies();
-  const company = buildCompanyRecord(companies, body);
+  const resolved = await resolveLocationFromAddress(body);
+  const company = buildCompanyRecord(companies, resolved);
   companies.push(company);
   await writeCompanies(companies);
   res.status(201).json(company);
