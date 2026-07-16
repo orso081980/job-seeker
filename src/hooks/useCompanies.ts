@@ -8,12 +8,16 @@ export function useCompanies() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    api
+    reload();
+  }, []);
+
+  function reload() {
+    return api
       .list()
       .then(setCompanies)
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
-  }, []);
+  }
 
   const create = async (input: NewCompanyInput) => {
     const created = await api.create(input);
@@ -35,5 +39,9 @@ export function useCompanies() {
     setCompanies((cs) => [...cs, company]);
   };
 
-  return { companies, loading, error, create, update, remove, addLocal };
+  const replaceLocal = (company: Company) => {
+    setCompanies((cs) => cs.map((c) => (c.id === company.id ? company : c)));
+  };
+
+  return { companies, loading, error, create, update, remove, addLocal, replaceLocal, reload };
 }

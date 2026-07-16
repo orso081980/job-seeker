@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Company } from "../../types";
-import { microlinkScreenshotUrl } from "../../api/client";
+import { screenshotSrc } from "../../utils/screenshotSrc";
 import { countryFlag } from "../../utils/countryFlag";
 import { parseTagList } from "../../utils/parseTagList";
 import StatusBadge from "./StatusBadge";
@@ -31,7 +31,7 @@ export default function CompanyCard({
       <div className="aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-white/10">
         {!imgFailed ? (
           <img
-            src={microlinkScreenshotUrl(company.website)}
+            src={screenshotSrc(company)}
             alt={`${company.company} website screenshot`}
             loading="lazy"
             onError={() => setImgFailed(true)}

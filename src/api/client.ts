@@ -1,6 +1,7 @@
 import type {
   Company,
   NewCompanyInput,
+  ScreenshotJobStatus,
   SourceResult,
   SourceSearchParams,
   SourceSearchResponse,
@@ -57,6 +58,14 @@ export const api = {
   sourcingRemove: (id: string) => request<void>(`/api/sourcing/${id}`, { method: "DELETE" }),
   sourcingPromote: (id: string) =>
     request<Company>(`/api/sourcing/${id}/promote`, { method: "POST" }),
+  screenshotsStart: (force = false) =>
+    request<ScreenshotJobStatus>("/api/screenshots", {
+      method: "POST",
+      body: JSON.stringify({ force }),
+    }),
+  screenshotsStatus: () => request<ScreenshotJobStatus>("/api/screenshots/status"),
+  screenshotRefresh: (id: string) =>
+    request<Company>(`/api/companies/${id}/screenshot`, { method: "POST" }),
 };
 
 export function microlinkScreenshotUrl(website: string): string {

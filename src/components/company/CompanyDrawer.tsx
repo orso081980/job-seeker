@@ -1,6 +1,8 @@
+import { useState } from "react";
 import type { Company, Status } from "../../types";
 import { STATUSES } from "../../types";
 import { countryFlag } from "../../utils/countryFlag";
+import { api } from "../../api/client";
 import { useCompanyDraft } from "../../hooks/useCompanyDraft";
 import Drawer from "../ui/Drawer";
 import Label from "../ui/Label";
@@ -22,23 +24,37 @@ export default function CompanyDrawer({
   onClose,
   onUpdate,
   onDelete,
+  onScreenshotRefreshed,
 }: {
   company: Company;
   authed: boolean;
   onClose: () => void;
   onUpdate: (id: string, patch: Partial<Company>) => Promise<unknown>;
   onDelete: (id: string) => void;
+  onScreenshotRefreshed: (company: Company) => void;
 }) {
   const { form, set, saveState, saveError, saveAndClose } = useCompanyDraft(company, onUpdate, onClose);
+  const [refreshingScreenshot, setRefreshingScreenshot] = useState(false);
+
+  const refreshScreenshot = async () => {
+    setRefreshingScreenshot(true);
+    try {
+      const updated = await api.screenshotRefresh(company.id);
+      onScreenshotRefreshed(updated);
+    } finally {
+      setRefreshingScreenshot(false);
+    }
+  };
 
   return (
     <Drawer onClose={onClose} onBackdropClick={authed ? undefined : onClose}>
       <DrawerHeader
-        website={company.website}
-        companyName={company.company}
+        company={company}
         status={form.status}
         authed={authed}
         saving={saveState === "saving"}
+        refreshingScreenshot={refreshingScreenshot}
+        onRefreshScreenshot={refreshScreenshot}
       />
 
       <div className="flex-1 space-y-5 p-5">

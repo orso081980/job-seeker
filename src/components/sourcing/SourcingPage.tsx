@@ -38,7 +38,7 @@ export default function SourcingPage({ onPromoted }: { onPromoted: (company: Com
 
       <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-white/10 dark:bg-white/5">
         {MAPS_API_KEY ? (
-          <APIProvider apiKey={MAPS_API_KEY}>
+          <APIProvider apiKey={MAPS_API_KEY} language="en">
             <SourceSearchForm onSearch={search} searching={searching} results={results} />
           </APIProvider>
         ) : (

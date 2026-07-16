@@ -41,8 +41,29 @@ export interface Company {
   contactLinkedIn: string;
   hasJobPosting: boolean;
   jobUrl: string;
+  screenshotUrl: string;
+  screenshotUpdatedAt: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface ScreenshotResult {
+  id: string;
+  company: string;
+  ok: boolean;
+  bytes?: number;
+  fit?: boolean;
+  error?: string;
+}
+
+export interface ScreenshotJobStatus {
+  running: boolean;
+  total: number;
+  done: number;
+  current: string | null;
+  results: ScreenshotResult[];
+  startedAt: string | null;
+  finishedAt: string | null;
 }
 
 export type NewCompanyInput = Pick<

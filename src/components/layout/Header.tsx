@@ -1,6 +1,7 @@
 import type { MouseEvent } from "react";
 import Logo from "./Logo";
 import Button from "../ui/Button";
+import ScreenshotsButton from "./ScreenshotsButton";
 
 export default function Header({
   companyCount,
@@ -14,6 +15,7 @@ export default function Header({
   onSourcingClick,
   onLogout,
   onLoginClick,
+  onScreenshotsDone,
 }: {
   companyCount: number;
   jobCount: number;
@@ -26,6 +28,7 @@ export default function Header({
   onSourcingClick: () => void;
   onLogout: () => void;
   onLoginClick: () => void;
+  onScreenshotsDone: () => void;
 }) {
   const navCls = (active: boolean) =>
     `rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -62,9 +65,12 @@ export default function Header({
             </nav>
           </div>
           {authed ? (
-            <Button variant="ghost" size="xs" onClick={onLogout}>
-              Logged in as admin · Log out
-            </Button>
+            <div className="flex items-center gap-3">
+              <ScreenshotsButton onDone={onScreenshotsDone} />
+              <Button variant="ghost" size="xs" onClick={onLogout}>
+                Logged in as admin · Log out
+              </Button>
+            </div>
           ) : (
             <Button variant="ghostBrand" size="xs" onClick={onLoginClick}>
               Log in

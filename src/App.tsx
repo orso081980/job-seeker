@@ -16,7 +16,8 @@ import Pagination from "./components/ui/Pagination";
 const HOME_PAGE_SIZE = 28;
 
 export default function App() {
-  const { companies, loading, error, create, update, remove, addLocal } = useCompanies();
+  const { companies, loading, error, create, update, remove, addLocal, replaceLocal, reload } =
+    useCompanies();
   const { authed, login, logout } = useAuth();
 
   const progressCompanies = companies.filter((c) => c.status !== "new");
@@ -80,6 +81,7 @@ export default function App() {
         onSourcingClick={() => (authed ? setPage("sourcing") : setLoginOpen(true))}
         onLogout={handleLogout}
         onLoginClick={() => setLoginOpen(true)}
+        onScreenshotsDone={reload}
       />
 
       {(page === "companies-grid" || page === "companies-kanban") && (
@@ -166,6 +168,7 @@ export default function App() {
           onClose={() => setSelectedId(null)}
           onUpdate={update}
           onDelete={handleDelete}
+          onScreenshotRefreshed={replaceLocal}
         />
       )}
 

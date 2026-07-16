@@ -24,7 +24,9 @@
     "address": "Rue des Quatre-Vents 4, 1080 Molenbeek-Saint-Jean, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Overall+Royal+Company/@50.8553125,4.3326322,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3c33cb0afac45:0xab810fd5a7f942ef!8m2!3d50.8553125!4d4.3352071!16s%2Fg%2F11whrnpn3n?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "FR"
+    "languages": "FR",
+    "screenshotUrl": "/screenshots/global-royal-company.png",
+    "screenshotUpdatedAt": "2026-07-16T13:59:25.451Z"
   },
   {
     "id": "prestige-business-center",
@@ -51,7 +53,9 @@
     "address": "Pl. des Barricades 1, 1000 Bruxelles, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=2754845189922346208&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "FR"
+    "languages": "FR",
+    "screenshotUrl": "/screenshots/prestige-business-center.png",
+    "screenshotUpdatedAt": "2026-07-16T13:59:49.607Z"
   },
   {
     "id": "ubi",
@@ -78,7 +82,9 @@
     "address": "Rue de Namur 48, 1000 Bruxelles, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=15258235018340674380&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/ubi.png",
+    "screenshotUpdatedAt": "2026-07-16T13:59:54.336Z"
   },
   {
     "id": "bsbelux",
@@ -105,7 +111,9 @@
     "address": "Av. Louise 65, 1050 Bruxelles, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=12511103849270251531&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/bsbelux.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:01.773Z"
   },
   {
     "id": "sbc-community",
@@ -132,7 +140,9 @@
     "address": "Sablon Tower 14th floor, Joseph Stevensstraat 7, 1000 Brussel, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=12862695884921834499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/sbc-community.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:07.240Z"
   },
   {
     "id": "the-louise-company",
@@ -159,7 +169,9 @@
     "address": "Rue aux Laines 68/72, 1000 Bruxelles, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=4598790437938984116&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "FR"
+    "languages": "FR",
+    "screenshotUrl": "/screenshots/the-louise-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:14.462Z"
   },
   {
     "id": "ooak-company",
@@ -186,7 +198,9 @@
     "address": "Koningin Wilheminahaven zz20, 3134 KG Vlaardingen, Netherlands",
     "mapsUrl": "https://maps.google.com/?cid=13715963805896195020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/ooak-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:21.857Z"
   },
   {
     "id": "the-brand-company",
@@ -213,7 +227,9 @@
     "address": "Brugwachter 2, 3034 KD Rotterdam, Netherlands",
     "mapsUrl": "https://maps.google.com/?cid=17470202953900996048&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/the-brand-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:25.441Z"
   },
   {
     "id": "cobeco-pharma",
@@ -240,7 +256,9 @@
     "address": "Hertzstraat 2, 2652 XX Berkel en Rodenrijs, Netherlands",
     "mapsUrl": "https://maps.google.com/?cid=10586872600682162457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/cobeco-pharma.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:28.537Z"
   },
   {
     "id": "bayards",
@@ -267,7 +285,9 @@
     "address": "Veerweg 2, 2957 CP Nieuw-Lekkerland, Netherlands",
     "mapsUrl": "https://www.google.com/maps/place/Bayards+Aluminium+Solutions/@51.8926162,4.6885652,17z/data=!3m1!4b1!4m6!3m5!1s0x47c42b7bce7c5847:0x227b877023e06e9e!8m2!3d51.8926162!4d4.6911401!16s%2Fg%2F1tgq5tkt?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, NL"
+    "languages": "EN, NL",
+    "screenshotUrl": "/screenshots/bayards.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:46.419Z"
   },
   {
     "id": "bbm-company",
@@ -294,7 +314,9 @@
     "address": "De Derde Hoeve 9, 2676 CN Maasdijk, Netherlands",
     "mapsUrl": "https://maps.google.com/?cid=15912291531378336683&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, CA"
+    "languages": "NL, CA",
+    "screenshotUrl": "/screenshots/bbm-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:52.151Z"
   },
   {
     "id": "the-james-company",
@@ -321,7 +343,9 @@
     "address": "De Bruyn Kopsstraat 9k, 2288 EC Rijswijk, Netherlands",
     "mapsUrl": "https://www.google.com/maps/place/The+James+Company/@52.0430957,4.3335533,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5b7770014031d:0x6a9e3316038a2cdb!8m2!3d52.0430957!4d4.3361282!16s%2Fg%2F11fjz90hv0?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/the-james-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:00:58.858Z"
   },
   {
     "id": "spring-company",
@@ -348,7 +372,9 @@
     "address": "Stationsplein 45, A4, 3013 AK Rotterdam, Netherlands",
     "mapsUrl": "https://maps.google.com/?cid=17211668422740850564&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/spring-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:05.696Z"
   },
   {
     "id": "oostland-company",
@@ -375,7 +401,9 @@
     "address": "Blokweg 13a, 2641 PT Pijnacker, Netherlands",
     "mapsUrl": "https://www.google.com/maps/place/Oostland+Company+B.V/@52.0244937,4.4528136,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5c902f7e59f23:0x48b32653764590a4!8m2!3d52.0244937!4d4.4553885!16s%2Fg%2F11kbj2h3sr?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/oostland-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:14.134Z"
   },
   {
     "id": "hermaplast",
@@ -402,7 +430,9 @@
     "address": "Im Rietacker 12, 9494 Schaan, Liechtenstein",
     "mapsUrl": "https://www.google.com/maps/place/Hermaplast/@47.1752362,9.5077837,17z/data=!3m1!4b1!4m6!3m5!1s0x479b30ff190f779f:0x2126d6a77d1731b3!8m2!3d47.1752362!4d9.5103586!16s%2Fg%2F11h_6qlh7f?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, DE"
+    "languages": "EN, DE",
+    "screenshotUrl": "/screenshots/hermaplast.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:17.363Z"
   },
   {
     "id": "creoox",
@@ -429,7 +459,9 @@
     "address": "Postfach 568 Landstrasse 40 FL-9495 Triesen Liechtenstein",
     "mapsUrl": "https://www.google.com/maps/place/Creoox+AG/@47.1207041,9.5210995,17z/data=!3m1!4b1!4m6!3m5!1s0x479b31bf5637d9cb:0x45f36e6dd9aef127!8m2!3d47.1207041!4d9.5236744!16s%2Fg%2F11h3kzt9vg?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, DE"
+    "languages": "EN, DE",
+    "screenshotUrl": "/screenshots/creoox.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:22.626Z"
   },
   {
     "id": "hob",
@@ -456,7 +488,9 @@
     "address": "Dr. Grass-Strasse 12 , 9490 Vaduz",
     "mapsUrl": "https://www.google.com/maps/place/House+of+Blockchain+Liechtenstein/@47.137392,9.5166314,17z/data=!3m1!4b1!4m6!3m5!1s0x479b31b1ea9cf557:0xc1aa169899a998!8m2!3d47.137392!4d9.5192063!16s%2Fg%2F11f77bdlph?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/hob.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:25.712Z"
   },
   {
     "id": "kyberna",
@@ -483,7 +517,9 @@
     "address": "Fürst-Franz-Josef-Strasse 5 9490 Vaduz Liechtenstein",
     "mapsUrl": "https://maps.google.com/?cid=10475939439730216912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "DE"
+    "languages": "DE",
+    "screenshotUrl": "/screenshots/kyberna.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:29.887Z"
   },
   {
     "id": "ayya",
@@ -510,7 +546,9 @@
     "address": "Städtli 3, 9470 Werdenberg, Switzerland",
     "mapsUrl": "https://www.google.com/maps/place/AYYA+Advisory+AG/@47.1678487,9.4609352,17.52z/data=!4m6!3m5!1s0x30df550183cc97f:0xc0cbf12774734d3b!8m2!3d47.1681706!4d9.4632589!16s%2Fg%2F11vqlljl23?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "DE"
+    "languages": "DE",
+    "screenshotUrl": "/screenshots/ayya.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:35.108Z"
   },
   {
     "id": "lean-space",
@@ -537,7 +575,9 @@
     "address": "4 Rue de la Haye, 67300 Schiltigheim, France",
     "mapsUrl": "https://www.google.com/maps/place/Leanspace/@48.7603251,7.5890686,9.97z/data=!4m6!3m5!1s0xea4f87d6e933c45:0xa329a87c8cbf1ef2!8m2!3d48.6134145!4d7.7139316!16s%2Fg%2F11rn0tsj2m?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/lean-space.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:38.217Z"
   },
   {
     "id": "pi-touch-company-evelyn-z-b",
@@ -564,7 +604,9 @@
     "address": "5 Quai du Général Koenig, 67000 Strasbourg, France",
     "mapsUrl": "https://www.google.com/maps/place/Soci%C3%A9t%C3%A9+Pitouch+Company/@48.5754252,7.7547734,17z/data=!3m2!4b1!5s0x4796c9aa62b37c63:0xaa07bf602735daf3!4m6!3m5!1s0x4796c84a45565555:0xc27a644d5ce969bf!8m2!3d48.5754252!4d7.7573483!16s%2Fg%2F11p5gcrk30?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, FR"
+    "languages": "EN, FR",
+    "screenshotUrl": "/screenshots/pi-touch-company-evelyn-z-b.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:41.161Z"
   },
   {
     "id": "hapticmedia",
@@ -591,7 +633,9 @@
     "address": "15 Rue des Francs-Bourgeois, 67000 Strasbourg, France",
     "mapsUrl": "https://www.google.com/maps/place/Hapticmedia/@48.5818005,7.743778,17z/data=!3m1!4b1!4m6!3m5!1s0x4796c9473120eb01:0x22f604e7d775ec97!8m2!3d48.5818005!4d7.7463529!16s%2Fg%2F11g18tx_0t?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, FR"
+    "languages": "EN, FR",
+    "screenshotUrl": "/screenshots/hapticmedia.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:43.605Z"
   },
   {
     "id": "holodia",
@@ -618,7 +662,9 @@
     "address": "13 Quai Kléber, 67000 Strasbourg, France",
     "mapsUrl": "https://www.google.com/maps/place/HOLODIA/@48.58667,7.74451,19.19z/data=!4m15!1m8!3m7!1s0x4796c84ef8af296f:0x290145c810742923!2s13+Quai+Kl%C3%A9ber,+67000+Strasbourg,+France!3b1!8m2!3d48.586609!4d7.7450723!16s%2Fg%2F11q2n7pgx5!3m5!1s0x4796c84ef89c62f1:0xbec7f9b1ee95a581!8m2!3d48.5865326!4d7.7450567!16s%2Fg%2F11cn16tpyy?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, FR, DE"
+    "languages": "EN, FR, DE",
+    "screenshotUrl": "/screenshots/holodia.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:50.956Z"
   },
   {
     "id": "mogwaibeercompany",
@@ -645,7 +691,9 @@
     "address": "3 Rue du Général Rapp, 67450 Mundolsheim, France",
     "mapsUrl": "https://www.google.com/maps/place/Mogwa%C3%AF+Beer+Company/@48.6321412,7.7162781,17z/data=!3m1!4b1!4m6!3m5!1s0x4796b9f22b8c0c5b:0x167db62e1e0447f7!8m2!3d48.6321412!4d7.718853!16s%2Fg%2F11ryhn658g?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN, FR, DE, IT, ES"
+    "languages": "EN, FR, DE, IT, ES",
+    "screenshotUrl": "/screenshots/mogwaibeercompany.png",
+    "screenshotUpdatedAt": "2026-07-16T14:01:54.043Z"
   },
   {
     "id": "konecta",
@@ -672,7 +720,9 @@
     "address": "1 Rue René Laennec, 67300 Schiltigheim, France",
     "mapsUrl": "https://maps.google.com/?cid=6696124640731146611&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "FR, EN, ES, IT, FR, DE, PO"
+    "languages": "FR, EN, ES, IT, FR, DE, PO",
+    "screenshotUrl": "/screenshots/konecta.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:00.936Z"
   },
   {
     "id": "phigi",
@@ -699,7 +749,9 @@
     "address": "2 Rue Marie Hamm, 67000 Strasbourg, France",
     "mapsUrl": "https://maps.google.com/?cid=8779940715192289284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "FR, EN"
+    "languages": "FR, EN",
+    "screenshotUrl": "/screenshots/phigi.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:07.537Z"
   },
   {
     "id": "adventure-company",
@@ -726,7 +778,9 @@
     "address": "Edisonstraße 3, 74076 Heilbronn, Germany",
     "mapsUrl": "https://maps.google.com/?cid=8422301564027094180&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "DE"
+    "languages": "DE",
+    "screenshotUrl": "/screenshots/adventure-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:21:15.332Z"
   },
   {
     "id": "salsa-company",
@@ -753,7 +807,9 @@
     "address": "Mercedesstraße 7, 70372 Stuttgart, Germany",
     "mapsUrl": "https://maps.google.com/?cid=2759388496599834774&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "DE"
+    "languages": "DE",
+    "screenshotUrl": "/screenshots/salsa-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:15.585Z"
   },
   {
     "id": "german-career-company",
@@ -780,7 +836,9 @@
     "address": "Charlottenplatz 6, 70173 Stuttgart",
     "mapsUrl": "https://www.google.com/maps/place/GCC+German+Career+Company+GmbH/@48.7752818,9.1805274,17z/data=!3m1!4b1!4m6!3m5!1s0x4799c4b540ec941d:0xea001743ac2509d9!8m2!3d48.7752818!4d9.1831023!16s%2Fg%2F11bwy_z7j_?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "DE"
+    "languages": "DE",
+    "screenshotUrl": "/screenshots/german-career-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:20.175Z"
   },
   {
     "id": "smac-softwares",
@@ -807,7 +865,9 @@
     "address": "Zollhausweg 57, 73734 Esslingen am Neckar, Germany",
     "mapsUrl": "https://maps.google.com/?cid=14289623886768994410&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "DE, EN"
+    "languages": "DE, EN",
+    "screenshotUrl": "/screenshots/smac-softwares.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:25.001Z"
   },
   {
     "id": "protein-distillery",
@@ -834,7 +894,9 @@
     "address": "Ostpreußenstraße 2/2, 73760 Ostfildern, Germany",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ostpreu%C3%9Fenstra%C3%9Fe%202/2%2C%2073760%20Ostfildern%2C%20Germany",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/protein-distillery.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:33.508Z"
   },
   {
     "id": "trever",
@@ -861,7 +923,9 @@
     "address": "Gadollapl. 1, 8010 Graz, Austria",
     "mapsUrl": "https://www.google.com/maps/place/Trever/@47.0568082,15.4431638,17z/data=!3m1!4b1!4m6!3m5!1s0x476e4a869b4d726b:0x58f04ae2459bac19!8m2!3d47.0568082!4d15.4457387!16s%2Fg%2F11j2yphkt2?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/trever.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:36.453Z"
   },
   {
     "id": "mflow",
@@ -888,7 +952,9 @@
     "address": "Schmiedlstraße 1, 8042 Graz, Austria",
     "mapsUrl": "https://www.google.com/maps/place/PH-MFLOW/@47.0447321,15.4759741,17z/data=!3m2!4b1!5s0x476e4a93009c81e1:0xb5efb53d3e8bf5ab!4m6!3m5!1s0x476e4bae54426a23:0xbe7a23edd81e309c!8m2!3d47.0447321!4d15.478549!16s%2Fg%2F11smc6wz94?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "DE, EN"
+    "languages": "DE, EN",
+    "screenshotUrl": "/screenshots/mflow.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:50.920Z"
   },
   {
     "id": "chase",
@@ -915,7 +981,9 @@
     "address": "Holstraat 21, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=11956282125299988289&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/chase.png",
+    "screenshotUpdatedAt": "2026-07-16T14:02:55.871Z"
   },
   {
     "id": "fcr-media-gent",
@@ -942,7 +1010,9 @@
     "address": "Sq. Marie Curie 50, 1070 Anderlecht, Belgium",
     "mapsUrl": "https://maps.app.goo.gl/aCUoE17sUc8w5rTD6",
     "searchQuery": "",
-    "languages": "NL, FR"
+    "languages": "NL, FR",
+    "screenshotUrl": "/screenshots/fcr-media-gent.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:04.039Z"
   },
   {
     "id": "springbok",
@@ -969,7 +1039,9 @@
     "address": "Charles de Kerchovelaan 14, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=1826392668463409403&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/springbok.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:08.300Z"
   },
   {
     "id": "de-barbaren-branding-communicatie",
@@ -996,7 +1068,9 @@
     "address": "Begijnhoflaan 408, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=14644185115937336734&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/de-barbaren-branding-communicatie.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:12.886Z"
   },
   {
     "id": "mark-up-agency",
@@ -1023,7 +1097,9 @@
     "address": "Nederkouter 145, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=16397778744540817241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/mark-up-agency.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:16.185Z"
   },
   {
     "id": "supermachine",
@@ -1050,7 +1126,9 @@
     "address": "Meerseniersstraat 4, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=504204282754194664&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "FR"
+    "languages": "FR",
+    "screenshotUrl": "/screenshots/supermachine.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:24.828Z"
   },
   {
     "id": "handlangers",
@@ -1077,7 +1155,9 @@
     "address": "Lange Violettestraat 94, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=5757024566460669243&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/handlangers.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:29.955Z"
   },
   {
     "id": "wanna",
@@ -1104,7 +1184,9 @@
     "address": "De Pintelaan 347, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=De%20Pintelaan%20347%2C%209000%20Gent%2C%20Belgium",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/wanna.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:34.449Z"
   },
   {
     "id": "june20-ghent",
@@ -1131,7 +1213,9 @@
     "address": "Stapelplein 70, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=1213175715098013751&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/june20-ghent.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:42.665Z"
   },
   {
     "id": "studio-sissi-branding-agency",
@@ -1158,7 +1242,9 @@
     "address": "Eedverbondkaai 52, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=16658061242909064844&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/studio-sissi-branding-agency.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:50.196Z"
   },
   {
     "id": "paloma",
@@ -1185,7 +1271,9 @@
     "address": "Bomastraat 10, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=8624434055415943217&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/paloma.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:55.365Z"
   },
   {
     "id": "figure8-digital-agency",
@@ -1212,7 +1300,9 @@
     "address": "Ter Luchteplein 1/a, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=13222811558890895136&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/figure8-digital-agency.png",
+    "screenshotUpdatedAt": "2026-07-16T14:03:58.547Z"
   },
   {
     "id": "maro-media",
@@ -1239,7 +1329,9 @@
     "address": "Kleine Schuurstraat 26, 9040 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=6569098066235065341&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/maro-media.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:03.551Z"
   },
   {
     "id": "follo-agency-gent",
@@ -1266,7 +1358,9 @@
     "address": "Nieuwewandeling 62, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=14104460988316971527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/follo-agency-gent.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:08.798Z"
   },
   {
     "id": "oogst-agency",
@@ -1293,7 +1387,9 @@
     "address": "Dokwerkers, Sassevaartstraat 46/303, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=8997373132694211601&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/oogst-agency.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:13.124Z"
   },
   {
     "id": "marketingbureau-gent-webdesign-seo-sea",
@@ -1320,7 +1416,9 @@
     "address": "Gouvernementstraat 42d, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=9837649456799827769&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/marketingbureau-gent-webdesign-seo-sea.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:23.809Z"
   },
   {
     "id": "direct-result-gent",
@@ -1347,7 +1445,9 @@
     "address": "Bomastraat 14, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=3435715433268766435&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/direct-result-gent.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:32.596Z"
   },
   {
     "id": "studio-engarde",
@@ -1374,7 +1474,9 @@
     "address": "Tondelierlaan 11, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=17815184003425958751&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/studio-engarde.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:37.677Z"
   },
   {
     "id": "zest-agency",
@@ -1401,7 +1503,9 @@
     "address": "Komijnstraat 16, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=16049796266686268978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/zest-agency.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:44.907Z"
   },
   {
     "id": "superkraft",
@@ -1428,7 +1532,9 @@
     "address": "Ferdinand Lousbergskaai 106/20, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=10119051810791764879&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, EN"
+    "languages": "NL, EN",
+    "screenshotUrl": "/screenshots/superkraft.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:47.457Z"
   },
   {
     "id": "makewaves",
@@ -1455,7 +1561,9 @@
     "address": "Guldensporenpark Gebouw I, bus 88, 9820 Merelbeke, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=10748043585385546207&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/makewaves.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:51.662Z"
   },
   {
     "id": "studio-84",
@@ -1482,7 +1590,9 @@
     "address": "Kolveniersgang 39, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Studio+84/@51.0606123,3.7096118,17z/data=!4m14!1m7!3m6!1s0x47c3714ef62c655f:0xb09be04273358f0f!2sStudio+84!8m2!3d51.0606124!4d3.7144827!16s%2Fg%2F11ggbckm5t!3m5!1s0x47c3714ef62c655f:0xb09be04273358f0f!8m2!3d51.0606124!4d3.7144827!16s%2Fg%2F11ggbckm5t?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL, EN, FR"
+    "languages": "NL, EN, FR",
+    "screenshotUrl": "/screenshots/studio-84.png",
+    "screenshotUpdatedAt": "2026-07-16T14:04:55.802Z"
   },
   {
     "id": "ants",
@@ -1509,7 +1619,9 @@
     "address": "Dok-Noord 5/Bus 002, 9000 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=1897752041092196786&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL, FR"
+    "languages": "NL, FR",
+    "screenshotUrl": "/screenshots/ants.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:00.286Z"
   },
   {
     "id": "iotta-communications-nv",
@@ -1536,7 +1648,9 @@
     "address": "Azaleastraat 75, 9040 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=1547728090900946875&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/iotta-communications-nv.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:10.293Z"
   },
   {
     "id": "karakters",
@@ -1563,7 +1677,9 @@
     "address": "Tondelierlaan 1, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Karakters/@51.0662146,3.7107858,17z/data=!3m1!4b1!4m6!3m5!1s0x47c371525db55173:0x816342297b1ebf19!8m2!3d51.0662147!4d3.7156567!16s%2Fg%2F11b6cmks6g?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/karakters.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:14.971Z"
   },
   {
     "id": "walkie-talkie-public-relations-influencer-marketing",
@@ -1590,7 +1706,9 @@
     "address": "Hundelgemsesteenweg 51, 9050 Gent, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=10182211489210269604&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/walkie-talkie-public-relations-influencer-marketing.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:21.212Z"
   },
   {
     "id": "pieter-pan-branding-grafisch-ontwerp-gent",
@@ -1617,7 +1735,9 @@
     "address": "Vaderlandstraat 40, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Pieter+Pan+%7C+Branding+%26+Grafisch+Ontwerp+%7C+Gent/@51.0309473,3.7131714,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3733ef4e21f51:0x1993bd0eebddefb3!8m2!3d51.0309473!4d3.7157463!16s%2Fg%2F11wj6tv4c_?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/pieter-pan-branding-grafisch-ontwerp-gent.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:27.724Z"
   },
   {
     "id": "the-brand-guys",
@@ -1644,7 +1764,9 @@
     "address": "François Laurentplein 2, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/The+Brand+Guys/@51.0513453,3.7249514,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3719da512a797:0x34b919ca554be19c!8m2!3d51.0513453!4d3.7275263!16s%2Fg%2F11jt1gf7w9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/the-brand-guys.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:32.186Z"
   },
   {
     "id": "perez-content-hub",
@@ -1671,7 +1793,9 @@
     "address": "Sint-Niklaasstraat 2, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Perez+Content+Hub/@51.0535353,3.7205025,17z/data=!4m14!1m7!3m6!1s0x47c3720b27a7f209:0xbba8a273a0144933!2sPerez+Content+Hub!8m2!3d51.0535353!4d3.7230774!16s%2Fg%2F11h7pbjlw8!3m5!1s0x47c3720b27a7f209:0xbba8a273a0144933!8m2!3d51.0535353!4d3.7230774!16s%2Fg%2F11h7pbjlw8?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/perez-content-hub.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:36.996Z"
   },
   {
     "id": "brigada",
@@ -1698,7 +1822,9 @@
     "address": "Amelia Earhartlaan 2/bus 401, 9051 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Brigada/@51.0304026,3.6860046,17z/data=!3m1!4b1!4m6!3m5!1s0x47c376a4c7ee0f0d:0x90b9ca9ba59029d6!8m2!3d51.0304026!4d3.6885795!16s%2Fg%2F1ptz66bdc?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "EN"
+    "languages": "EN",
+    "screenshotUrl": "/screenshots/brigada.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:43.518Z"
   },
   {
     "id": "noted-the-studio",
@@ -1725,7 +1851,9 @@
     "address": "Laurent Delvauxstraat 2a, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/Noted+The+Studio/@51.042049,3.7172073,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3657f076e64d9:0xa6354e0a5b054d0a!8m2!3d51.042049!4d3.7197822!16s%2Fg%2F11ql8xg7k6?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/noted-the-studio.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:47.503Z"
   },
   {
     "id": "rocky-branding-studio",
@@ -1752,7 +1880,9 @@
     "address": "Schuurkenstraat 2/302, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/ROCKY+-+Branding+studio/@51.0534663,3.7168782,17z/data=!3m1!4b1!4m6!3m5!1s0x47c37146b9c4964f:0xb028f3f619f42f8f!8m2!3d51.0534664!4d3.7217491!16s%2Fg%2F11cfh3_wk?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/rocky-branding-studio.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:53.218Z"
   },
   {
     "id": "ezy-marketing",
@@ -1779,7 +1909,9 @@
     "address": "Peperstraat 42, 9000 Gent, Belgium",
     "mapsUrl": "https://www.google.com/maps/place/EZY+Marketing/@51.0559186,3.7118269,17z/data=!3m1!4b1!4m6!3m5!1s0x47c36d93f5fb3633:0x2e3bea537c0c219e!8m2!3d51.0559186!4d3.7144018!16s%2Fg%2F11wbgphnj0?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
     "searchQuery": "",
-    "languages": "NL"
+    "languages": "NL",
+    "screenshotUrl": "/screenshots/ezy-marketing.png",
+    "screenshotUpdatedAt": "2026-07-16T14:05:58.723Z"
   },
   {
     "id": "secure-code-warrior",
@@ -1806,7 +1938,9 @@
     "hasJobPosting": true,
     "jobUrl": "https://jobs.lever.co/securecodewarrior/f49536c8-3ea7-48b3-86a5-7052ff6530fc",
     "createdAt": "2026-07-14T10:26:38.874Z",
-    "updatedAt": "2026-07-14T10:30:29.780Z"
+    "updatedAt": "2026-07-14T10:30:29.780Z",
+    "screenshotUrl": "/screenshots/secure-code-warrior.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:03.598Z"
   },
   {
     "id": "otary",
@@ -1833,7 +1967,9 @@
     "hasJobPosting": true,
     "jobUrl": "https://jobs.otary.be/en",
     "createdAt": "2026-07-14T11:11:37.295Z",
-    "updatedAt": "2026-07-14T14:15:56.916Z"
+    "updatedAt": "2026-07-14T14:15:56.916Z",
+    "screenshotUrl": "/screenshots/otary.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:07.709Z"
   },
   {
     "id": "deme-group",
@@ -1860,7 +1996,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T12:31:57.744Z",
-    "updatedAt": "2026-07-14T12:45:40.524Z"
+    "updatedAt": "2026-07-14T12:45:40.524Z",
+    "screenshotUrl": "/screenshots/deme-group.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:12.099Z"
   },
   {
     "id": "exail-robotics-belgium",
@@ -1887,7 +2025,9 @@
     "hasJobPosting": true,
     "jobUrl": "https://jobs.exail.com/en/annonces",
     "createdAt": "2026-07-14T12:33:19.455Z",
-    "updatedAt": "2026-07-14T12:34:14.259Z"
+    "updatedAt": "2026-07-14T12:34:14.259Z",
+    "screenshotUrl": "/screenshots/exail-robotics-belgium.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:14.592Z"
   },
   {
     "id": "turks-tour-company",
@@ -1914,7 +2054,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T13:10:39.604Z",
-    "updatedAt": "2026-07-14T16:41:17.327Z"
+    "updatedAt": "2026-07-14T16:41:17.327Z",
+    "screenshotUrl": "/screenshots/turks-tour-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:19.793Z"
   },
   {
     "id": "chef-and-private-chef-turks-and-caicos",
@@ -1941,7 +2083,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T14:40:44.531Z",
-    "updatedAt": "2026-07-14T16:41:08.801Z"
+    "updatedAt": "2026-07-14T16:41:08.801Z",
+    "screenshotUrl": "/screenshots/chef-and-private-chef-turks-and-caicos.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:25.574Z"
   },
   {
     "id": "kvanar",
@@ -1968,7 +2112,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T14:57:32.964Z",
-    "updatedAt": "2026-07-14T16:40:54.769Z"
+    "updatedAt": "2026-07-14T16:40:54.769Z",
+    "screenshotUrl": "/screenshots/kvanar.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:36.709Z"
   },
   {
     "id": "grace-bay-adventures-turks-and-caicos-islands",
@@ -1995,7 +2141,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T15:43:21.857Z",
-    "updatedAt": "2026-07-14T16:40:39.962Z"
+    "updatedAt": "2026-07-14T16:40:39.962Z",
+    "screenshotUrl": "/screenshots/grace-bay-adventures-turks-and-caicos-islands.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:40.867Z"
   },
   {
     "id": "antigua-computer-technology-act-downtown",
@@ -2022,7 +2170,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-14T16:27:11.617Z",
-    "updatedAt": "2026-07-14T16:40:45.801Z"
+    "updatedAt": "2026-07-14T16:40:45.801Z",
+    "screenshotUrl": "/screenshots/antigua-computer-technology-act-downtown.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:44.638Z"
   },
   {
     "id": "bright-plus-leuven-rekruteringsbureau-selectiekantoor",
@@ -2049,7 +2199,9 @@
     "hasJobPosting": true,
     "jobUrl": "https://www.brightplus.be/en/freelance",
     "createdAt": "2026-07-15T14:03:26.298Z",
-    "updatedAt": "2026-07-15T14:49:32.279Z"
+    "updatedAt": "2026-07-15T14:49:32.279Z",
+    "screenshotUrl": "/screenshots/bright-plus-leuven-rekruteringsbureau-selectiekantoor.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:52.242Z"
   },
   {
     "id": "mise-en-place",
@@ -2058,12 +2210,12 @@
     "city": "Leuven",
     "country": "Belgium",
     "industry": "Employment agency",
-    "description": "",
+    "description": "For the moment, nice email",
     "address": "Brabançonnestraat 32, 3000 Leuven, Belgium",
     "mapsUrl": "https://maps.google.com/?cid=11032040465930379788&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "searchQuery": "agency",
     "languages": "NL, FR",
-    "status": "contacted",
+    "status": "declined",
     "rating": 0,
     "notes": "",
     "techStackNotes": "Drupal, Font Awesome",
@@ -2076,7 +2228,9 @@
     "hasJobPosting": true,
     "jobUrl": "https://www.miseenplace.be/nl/jobs/spontane-sollicitatie",
     "createdAt": "2026-07-15T14:03:28.948Z",
-    "updatedAt": "2026-07-15T14:37:59.828Z"
+    "updatedAt": "2026-07-16T12:44:26.188Z",
+    "screenshotUrl": "/screenshots/mise-en-place.png",
+    "screenshotUpdatedAt": "2026-07-16T14:06:56.133Z"
   },
   {
     "id": "vivaldis-leuven",
@@ -2103,13 +2257,15 @@
     "hasJobPosting": true,
     "jobUrl": "https://www.vivaldisinterim.be/en/apply",
     "createdAt": "2026-07-15T14:03:33.591Z",
-    "updatedAt": "2026-07-15T14:39:43.410Z"
+    "updatedAt": "2026-07-15T14:39:43.410Z",
+    "screenshotUrl": "/screenshots/vivaldis-leuven.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:17.223Z"
   },
   {
     "id": "vr-agency-agence-web-li-ge",
     "company": "VR AGENCY - Agence Web Liège",
     "website": "https://vragency.be",
-    "city": "Luik",
+    "city": "Liege",
     "country": "Belgium",
     "industry": "Services",
     "description": "",
@@ -2130,7 +2286,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:11.020Z",
-    "updatedAt": "2026-07-15T19:56:57.871Z"
+    "updatedAt": "2026-07-16T10:45:21.956Z",
+    "screenshotUrl": "/screenshots/vr-agency-agence-web-li-ge.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:21.954Z"
   },
   {
     "id": "webecode",
@@ -2157,7 +2315,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:11.880Z",
-    "updatedAt": "2026-07-15T19:26:07.866Z"
+    "updatedAt": "2026-07-15T19:26:07.866Z",
+    "screenshotUrl": "/screenshots/webecode.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:25.527Z"
   },
   {
     "id": "creative-art",
@@ -2184,7 +2344,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:12.772Z",
-    "updatedAt": "2026-07-15T19:23:15.618Z"
+    "updatedAt": "2026-07-15T19:23:15.618Z",
+    "screenshotUrl": "/screenshots/creative-art.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:31.389Z"
   },
   {
     "id": "webadev",
@@ -2211,7 +2373,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:14.556Z",
-    "updatedAt": "2026-07-15T19:24:16.436Z"
+    "updatedAt": "2026-07-15T19:24:16.436Z",
+    "screenshotUrl": "/screenshots/webadev.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:34.502Z"
   },
   {
     "id": "web-creation",
@@ -2238,7 +2402,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:15.369Z",
-    "updatedAt": "2026-07-15T19:28:29.996Z"
+    "updatedAt": "2026-07-15T19:28:29.996Z",
+    "screenshotUrl": "/screenshots/web-creation.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:39.227Z"
   },
   {
     "id": "oasisdevs",
@@ -2265,7 +2431,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:16.022Z",
-    "updatedAt": "2026-07-15T19:29:24.066Z"
+    "updatedAt": "2026-07-15T19:29:24.066Z",
+    "screenshotUrl": "/screenshots/oasisdevs.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:43.941Z"
   },
   {
     "id": "netside-sprl",
@@ -2292,7 +2460,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:17.246Z",
-    "updatedAt": "2026-07-15T19:53:10.520Z"
+    "updatedAt": "2026-07-15T19:53:10.520Z",
+    "screenshotUrl": "/screenshots/netside-sprl.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:49.827Z"
   },
   {
     "id": "into-the-web",
@@ -2319,7 +2489,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:17.996Z",
-    "updatedAt": "2026-07-15T22:52:43.220Z"
+    "updatedAt": "2026-07-15T22:52:43.220Z",
+    "screenshotUrl": "/screenshots/into-the-web.png",
+    "screenshotUpdatedAt": "2026-07-16T14:07:57.971Z"
   },
   {
     "id": "agenz",
@@ -2346,7 +2518,9 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:18.687Z",
-    "updatedAt": "2026-07-15T20:03:41.858Z"
+    "updatedAt": "2026-07-15T20:03:41.858Z",
+    "screenshotUrl": "/screenshots/agenz.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:01.073Z"
   },
   {
     "id": "digitar",
@@ -2373,6 +2547,153 @@
     "hasJobPosting": false,
     "jobUrl": "",
     "createdAt": "2026-07-15T16:17:19.426Z",
-    "updatedAt": "2026-07-15T19:25:46.653Z"
+    "updatedAt": "2026-07-15T19:25:46.653Z",
+    "screenshotUrl": "/screenshots/digitar.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:06.836Z"
+  },
+  {
+    "id": "antwerp-engineering-company",
+    "company": "Antwerp Engineering Company",
+    "website": "http://www.aec.be",
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "industry": "Consultant",
+    "description": "Not really a real website, but Architecture consultancy",
+    "address": "Indiestraat 10, 2000 Antwerpen, Belgium",
+    "mapsUrl": "https://maps.google.com/?cid=11449890528837794090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "searchQuery": "company",
+    "languages": "EN",
+    "status": "contacted",
+    "rating": 0,
+    "notes": "",
+    "techStackNotes": "Font Awesome, Cloudflare",
+    "projectUrl": "",
+    "githubUrl": "",
+    "contactName": "",
+    "contactEmail": "",
+    "contactPhone": "03 222 95 62",
+    "contactLinkedIn": "",
+    "hasJobPosting": false,
+    "jobUrl": "",
+    "createdAt": "2026-07-16T11:47:36.991Z",
+    "updatedAt": "2026-07-16T12:00:47.694Z",
+    "screenshotUrl": "/screenshots/antwerp-engineering-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:11.442Z"
+  },
+  {
+    "id": "outsorgroup-bpo-company",
+    "company": "Outsorgroup Bpo Company",
+    "website": "https://outsorgroup.com",
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "industry": "",
+    "description": "",
+    "address": "Olijftakstraat 7, 2060 Antwerpen, Belgium",
+    "mapsUrl": "https://maps.google.com/?cid=4146488967819122444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "searchQuery": "company",
+    "languages": "EN, FR, NL",
+    "status": "contacted",
+    "rating": 0,
+    "notes": "",
+    "techStackNotes": "Tailwind CSS, Google Analytics, Font Awesome",
+    "projectUrl": "",
+    "githubUrl": "",
+    "contactName": "",
+    "contactEmail": "",
+    "contactPhone": "03 344 33 30",
+    "contactLinkedIn": "",
+    "hasJobPosting": false,
+    "jobUrl": "",
+    "createdAt": "2026-07-16T11:47:37.711Z",
+    "updatedAt": "2026-07-16T11:52:51.154Z",
+    "screenshotUrl": "/screenshots/outsorgroup-bpo-company.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:18.176Z"
+  },
+  {
+    "id": "simco-intl-bvba",
+    "company": "SIMCO INTL bvba",
+    "website": "http://www.simcogroup.co",
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "industry": "Corporate office",
+    "description": "",
+    "address": "De Keyserlei 58-60; Bis-19, 2018 Antwerpen, Belgium",
+    "mapsUrl": "https://maps.google.com/?cid=18018680123487385514&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "searchQuery": "company",
+    "languages": "EN,FR, NL",
+    "status": "contacted",
+    "rating": 0,
+    "notes": "",
+    "techStackNotes": "",
+    "projectUrl": "",
+    "githubUrl": "",
+    "contactName": "",
+    "contactEmail": "info@simcogroup.co",
+    "contactPhone": "0479 96 19 09",
+    "contactLinkedIn": "",
+    "hasJobPosting": false,
+    "jobUrl": "",
+    "createdAt": "2026-07-16T11:47:38.733Z",
+    "updatedAt": "2026-07-16T12:06:50.585Z",
+    "screenshotUrl": "/screenshots/simco-intl-bvba.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:24.349Z"
+  },
+  {
+    "id": "nanex-company-bvba",
+    "company": "Nanex Company BVBA",
+    "website": "http://www.nanex.care",
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "industry": "Store",
+    "description": "",
+    "address": "Arenbergstraat 2, 2000 Antwerpen, Belgium",
+    "mapsUrl": "https://maps.google.com/?cid=15337243401931632553&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "searchQuery": "company",
+    "languages": "",
+    "status": "maybe",
+    "rating": 0,
+    "notes": "",
+    "techStackNotes": "WordPress, WooCommerce, jQuery, Elementor, Google Fonts, Font Awesome, PHP",
+    "projectUrl": "",
+    "githubUrl": "",
+    "contactName": "",
+    "contactEmail": "",
+    "contactPhone": "09 223 07 72",
+    "contactLinkedIn": "",
+    "hasJobPosting": false,
+    "jobUrl": "",
+    "createdAt": "2026-07-16T11:47:39.469Z",
+    "updatedAt": "2026-07-16T12:01:33.260Z",
+    "screenshotUrl": "/screenshots/nanex-company-bvba.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:28.550Z"
+  },
+  {
+    "id": "being",
+    "company": "BEING",
+    "website": "http://being.mov",
+    "city": "Antwerpen",
+    "country": "Belgium",
+    "industry": "Media Production",
+    "description": "",
+    "address": "Frankrijklei 5, 2000 Antwerpen, Belgium",
+    "mapsUrl": "https://maps.google.com/?cid=3095505055036024660&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "searchQuery": "company",
+    "languages": "EN",
+    "status": "new",
+    "rating": 0,
+    "notes": "",
+    "techStackNotes": "WordPress",
+    "projectUrl": "",
+    "githubUrl": "",
+    "contactName": "",
+    "contactEmail": "hello@being.mov",
+    "contactPhone": "03 325 55 52",
+    "contactLinkedIn": "https://www.linkedin.com/company/being-mov/",
+    "hasJobPosting": false,
+    "jobUrl": "",
+    "createdAt": "2026-07-16T11:47:40.137Z",
+    "updatedAt": "2026-07-16T13:34:25.891Z",
+    "screenshotUrl": "/screenshots/being.png",
+    "screenshotUpdatedAt": "2026-07-16T14:08:33.318Z"
   }
 ]

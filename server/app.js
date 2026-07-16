@@ -4,6 +4,7 @@ import { requireAuth, registerAuthRoutes } from "./auth.js";
 import { buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
 import { detectStack } from "./stackDetect.js";
 import sourcingRouter from "./sourcing.js";
+import { startJob, getStatus, captureSingle } from "./screenshotJob.js";
 
 const app = express();
 app.use(express.json());
@@ -78,6 +79,25 @@ app.delete("/api/companies/:id", requireAuth, async (req, res) => {
   if (next.length === companies.length) return res.status(404).json({ error: "not found" });
   await writeCompanies(next);
   res.status(204).end();
+});
+
+app.post("/api/screenshots", requireAuth, async (req, res) => {
+  const force = Boolean(req.body?.force);
+  const result = await startJob(force);
+  res.status(result.alreadyRunning ? 200 : 202).json(result.status);
+});
+
+app.get("/api/screenshots/status", requireAuth, (_req, res) => {
+  res.json(getStatus());
+});
+
+app.post("/api/companies/:id/screenshot", requireAuth, async (req, res) => {
+  try {
+    const company = await captureSingle(req.params.id);
+    res.json(company);
+  } catch (e) {
+    res.status(e.code === "NOT_FOUND" ? 404 : 502).json({ error: e.message });
+  }
 });
 
 app.get("/api/detect-stack", requireAuth, async (req, res) => {

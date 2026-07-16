@@ -53,6 +53,8 @@ export function buildCompanyRecord(existingCompanies, body) {
     contactLinkedIn: body.contactLinkedIn ?? "",
     hasJobPosting: Boolean(body.hasJobPosting),
     jobUrl: body.jobUrl ?? "",
+    screenshotUrl: "",
+    screenshotUpdatedAt: "",
     createdAt: now,
     updatedAt: now,
   };
