@@ -47,6 +47,11 @@ export interface Company {
   updatedAt: string;
 }
 
+export interface LetterResult {
+  analysis: string;
+  letter: string;
+}
+
 export interface ScreenshotResult {
   id: string;
   company: string;

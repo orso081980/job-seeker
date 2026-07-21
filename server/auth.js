@@ -1,4 +1,6 @@
 import crypto from "node:crypto";
+import bcrypt from "bcryptjs";
+import { findAdminByUsername } from "./db/admins.js";
 
 const COOKIE_NAME = "jp_session";
 const MAX_AGE_MS = 1000 * 60 * 60 * 24 * 7; // 7 days
@@ -59,20 +61,31 @@ export function requireAuth(req, res, next) {
   next();
 }
 
+// Admin accounts live in the `admins` table (see server/db/admins.js).
+// Manage them with server/scripts/create-admin.js.
+async function verifyCredentials(username, password) {
+  const admin = await findAdminByUsername(username);
+  if (!admin) return false;
+  return bcrypt.compare(password, admin.password_hash);
+}
+
 export function registerAuthRoutes(app) {
-  app.post("/api/login", (req, res) => {
+  app.post("/api/login", async (req, res) => {
     const { username, password } = req.body ?? {};
-    const expectedUser = process.env.ADMIN_USERNAME;
-    const expectedPass = process.env.ADMIN_PASSWORD;
-    if (!expectedUser || !expectedPass || !process.env.SESSION_SECRET) {
-      return res.status(500).json({ error: "Admin credentials are not configured on the server." });
+    if (!process.env.SESSION_SECRET || !process.env.DATABASE_URL) {
+      return res.status(500).json({ error: "Admin sign-in is not configured on the server." });
     }
-    if (
-      typeof username !== "string" ||
-      typeof password !== "string" ||
-      !safeEqual(username, expectedUser) ||
-      !safeEqual(password, expectedPass)
-    ) {
+    if (typeof username !== "string" || typeof password !== "string") {
+      return res.status(401).json({ error: "Invalid username or password." });
+    }
+
+    let authenticated = false;
+    try {
+      authenticated = await verifyCredentials(username, password);
+    } catch (e) {
+      console.warn(`[auth] admin lookup failed: ${e.message}`);
+    }
+    if (!authenticated) {
       return res.status(401).json({ error: "Invalid username or password." });
     }
     const token = sign({ u: username, exp: Date.now() + MAX_AGE_MS });

@@ -14,8 +14,10 @@
   "dependencies": {
     "@vercel/blob": "^2.5.0",
     "@vis.gl/react-google-maps": "^1.9.0",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.2",
     "express": "^4.19.2",
+    "mysql2": "^3.23.0",
     "playwright": "^1.61.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

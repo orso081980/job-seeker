@@ -5,6 +5,7 @@ import { countryFlag } from "../../utils/countryFlag";
 import { api } from "../../api/client";
 import { useCompanyDraft } from "../../hooks/useCompanyDraft";
 import Drawer from "../ui/Drawer";
+import Button from "../ui/Button";
 import Label from "../ui/Label";
 import FormField from "../ui/FormField";
 import Select from "../ui/Select";
@@ -17,6 +18,7 @@ import SourceFieldset from "./SourceFieldset";
 import ContactFieldset from "./ContactFieldset";
 import TechStackField from "./TechStackField";
 import DrawerActions from "./DrawerActions";
+import LetterModal from "./LetterModal";
 
 export default function CompanyDrawer({
   company,
@@ -35,6 +37,7 @@ export default function CompanyDrawer({
 }) {
   const { form, set, saveState, saveError, saveAndClose } = useCompanyDraft(company, onUpdate, onClose);
   const [refreshingScreenshot, setRefreshingScreenshot] = useState(false);
+  const [showLetterModal, setShowLetterModal] = useState(false);
 
   const refreshScreenshot = async () => {
     setRefreshingScreenshot(true);
@@ -255,6 +258,12 @@ export default function CompanyDrawer({
         />
 
         {authed && (
+          <Button variant="ghost" size="sm" onClick={() => setShowLetterModal(true)} disabled={!form.website}>
+            Generate outreach letter
+          </Button>
+        )}
+
+        {authed && (
           <DrawerActions
             companyName={company.company}
             saving={saveState === "saving"}
@@ -264,6 +273,8 @@ export default function CompanyDrawer({
           />
         )}
       </div>
+
+      {showLetterModal && <LetterModal company={company} onClose={() => setShowLetterModal(false)} />}
     </Drawer>
   );
 }

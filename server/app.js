@@ -5,6 +5,7 @@ import { buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
 import { detectStack } from "./stackDetect.js";
 import sourcingRouter from "./sourcing.js";
 import { startJob, getStatus, captureSingle } from "./screenshotJob.js";
+import { generateLetter } from "./letter.js";
 
 const app = express();
 app.use(express.json());
@@ -97,6 +98,18 @@ app.post("/api/companies/:id/screenshot", requireAuth, async (req, res) => {
     res.json(company);
   } catch (e) {
     res.status(e.code === "NOT_FOUND" ? 404 : 502).json({ error: e.message });
+  }
+});
+
+app.post("/api/companies/:id/letter", requireAuth, async (req, res) => {
+  const companies = await readCompanies();
+  const company = companies.find((c) => c.id === req.params.id);
+  if (!company) return res.status(404).json({ error: "not found" });
+  try {
+    const result = await generateLetter(company);
+    res.json(result);
+  } catch (e) {
+    res.status(502).json({ error: e.message });
   }
 });
 

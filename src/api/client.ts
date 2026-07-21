@@ -1,5 +1,6 @@
 import type {
   Company,
+  LetterResult,
   NewCompanyInput,
   ScreenshotJobStatus,
   SourceResult,
@@ -66,6 +67,8 @@ export const api = {
   screenshotsStatus: () => request<ScreenshotJobStatus>("/api/screenshots/status"),
   screenshotRefresh: (id: string) =>
     request<Company>(`/api/companies/${id}/screenshot`, { method: "POST" }),
+  generateLetter: (id: string) =>
+    request<LetterResult>(`/api/companies/${id}/letter`, { method: "POST" }),
 };
 
 export function microlinkScreenshotUrl(website: string): string {
