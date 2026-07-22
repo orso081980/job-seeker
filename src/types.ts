@@ -49,7 +49,24 @@ export interface Company {
 
 export interface LetterResult {
   analysis: string;
+  subject: string;
   letter: string;
+}
+
+export interface SendLetterResult {
+  sent: boolean;
+  test: boolean;
+  to: string;
+}
+
+export interface SentEmail {
+  id: number;
+  companyId: string;
+  companyName: string;
+  toEmail: string;
+  subject: string;
+  body: string;
+  sentAt: string;
 }
 
 export interface ScreenshotResult {

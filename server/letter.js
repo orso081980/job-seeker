@@ -16,9 +16,10 @@ const SCHEMA = {
   type: "object",
   properties: {
     analysis: { type: "string" },
+    subject: { type: "string" },
     letter: { type: "string" },
   },
-  required: ["analysis", "letter"],
+  required: ["analysis", "subject", "letter"],
 };
 
 async function scrapeWebsiteText(url) {
@@ -70,7 +71,8 @@ ${siteText || "(could not be fetched)"}
 
 TASK:
 1. In "analysis" (3-5 sentences), explain the best angle for this specific company: what to lead with and which experience to emphasize, based on their industry, location, and tech stack.
-2. In "letter", write the full outreach letter following that angle. Adapt the greeting, company name, location and industry references, and technical angle. Write in English unless the site is clearly not in English and a different language would be more effective — if so, write the letter in that language and note the choice in "analysis".
+2. In "subject", write a short, specific email subject line (under 80 characters) referencing the company or the angle — not a generic "Introduction" or "Collaboration opportunity".
+3. In "letter", write the full outreach letter following that angle. Adapt the greeting, company name, location and industry references, and technical angle. Write in English unless the site is clearly not in English and a different language would be more effective — if so, write the letter (and subject) in that language and note the choice in "analysis".
 
 Return only the JSON matching the schema.`;
 }

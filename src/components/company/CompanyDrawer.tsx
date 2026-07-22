@@ -274,7 +274,9 @@ export default function CompanyDrawer({
         )}
       </div>
 
-      {showLetterModal && <LetterModal company={company} onClose={() => setShowLetterModal(false)} />}
+      {showLetterModal && (
+        <LetterModal company={company} onClose={() => setShowLetterModal(false)} onUpdate={onUpdate} />
+      )}
     </Drawer>
   );
 }

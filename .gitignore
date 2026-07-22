@@ -7,3 +7,8 @@ dist/
 .DS_Store
 coverage/
 .vscode/
+
+# Frozen backups from before the MySQL migration -- no longer read or
+# written by the app. Left in place, just not tracked going forward.
+data/companies-new.json
+data/sourced.json

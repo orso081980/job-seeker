@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readCompanies, writeCompanies } from "./store.js";
+import { listCompanies, findCompanyById, updateCompany } from "./db/companies.js";
 import { launchBrowser, captureScreenshot } from "./screenshot.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -21,16 +21,10 @@ async function saveScreenshot(id, buffer) {
 }
 
 async function markCaptured(id) {
-  const companies = await readCompanies();
-  const idx = companies.findIndex((c) => c.id === id);
-  if (idx === -1) return null;
-  companies[idx] = {
-    ...companies[idx],
+  return updateCompany(id, {
     screenshotUrl: `/screenshots/${id}.png`,
     screenshotUpdatedAt: new Date().toISOString(),
-  };
-  await writeCompanies(companies);
-  return companies[idx];
+  });
 }
 
 async function runJob(targets) {
@@ -59,7 +53,7 @@ async function runJob(targets) {
 export async function startJob(force = false) {
   if (job?.running) return { alreadyRunning: true, status: getStatus() };
 
-  const companies = await readCompanies();
+  const companies = await listCompanies();
   const targets = force ? companies : companies.filter((c) => !c.screenshotUrl);
 
   job = {
@@ -83,8 +77,7 @@ export async function startJob(force = false) {
 }
 
 export async function captureSingle(id) {
-  const companies = await readCompanies();
-  const company = companies.find((c) => c.id === id);
+  const company = await findCompanyById(id);
   if (!company) {
     const err = new Error("not found");
     err.code = "NOT_FOUND";

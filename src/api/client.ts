@@ -3,6 +3,8 @@ import type {
   LetterResult,
   NewCompanyInput,
   ScreenshotJobStatus,
+  SendLetterResult,
+  SentEmail,
   SourceResult,
   SourceSearchParams,
   SourceSearchResponse,
@@ -69,6 +71,12 @@ export const api = {
     request<Company>(`/api/companies/${id}/screenshot`, { method: "POST" }),
   generateLetter: (id: string) =>
     request<LetterResult>(`/api/companies/${id}/letter`, { method: "POST" }),
+  sendLetter: (id: string, payload: { subject: string; letter: string; test: boolean }) =>
+    request<SendLetterResult>(`/api/companies/${id}/send-letter`, {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+  listSentEmails: (id: string) => request<SentEmail[]>(`/api/companies/${id}/emails`),
 };
 
 export function microlinkScreenshotUrl(website: string): string {

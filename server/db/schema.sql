@@ -1,11 +1,8 @@
--- Mirror of the JSON data stores (data/companies-new.json, data/sourced.json)
--- plus an admins table for DB-backed sign-in.
+-- MySQL is the sole source of truth for this app (data/companies-new.json and
+-- data/sourced.json are frozen, unused backups -- nothing reads or writes them
+-- anymore). See server/db/*.js for the CRUD functions backing each table.
 --
--- The JSON files remain the source of truth for reads. These tables are kept
--- in sync on every write (server/store.js) so the data is queryable with SQL
--- and the app is ready to switch its reads over to MySQL later.
---
--- Run once with: node server/scripts/migrate-db.js
+-- Run once (or after adding a table here) with: node server/scripts/migrate-db.js
 
 CREATE TABLE IF NOT EXISTS companies (
   id                 VARCHAR(191) PRIMARY KEY,
@@ -33,8 +30,9 @@ CREATE TABLE IF NOT EXISTS companies (
   job_url            VARCHAR(500) NOT NULL DEFAULT '',
   screenshot_url     VARCHAR(500) NOT NULL DEFAULT '',
   screenshot_updated_at VARCHAR(32) NOT NULL DEFAULT '',
-  -- stored as the same ISO-8601 string used in JSON, not DATETIME, so this
-  -- table is always a byte-for-byte mirror of the JSON record.
+  -- stored as the same ISO-8601 string the app has always used in JS
+  -- (new Date().toISOString()), not DATETIME, to avoid timezone/parsing
+  -- surprises -- every date in this schema follows the same convention.
   created_at         VARCHAR(32)  NOT NULL DEFAULT '',
   updated_at         VARCHAR(32)  NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -62,4 +60,20 @@ CREATE TABLE IF NOT EXISTS admins (
   username           VARCHAR(255) NOT NULL UNIQUE,
   password_hash      VARCHAR(255) NOT NULL,
   created_at         VARCHAR(32)  NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Append-only log of outreach letters actually sent to a company (test sends
+-- to yourself are never logged here -- see server/app.js). No update/delete
+-- by design: it's a history, not an editable record. Fields are a snapshot
+-- of what was sent at the time, not a live join to `companies`, so the log
+-- stays meaningful even if the company record later changes or is deleted.
+CREATE TABLE IF NOT EXISTS sent_emails (
+  id                 INT AUTO_INCREMENT PRIMARY KEY,
+  company_id         VARCHAR(191) NOT NULL,
+  company_name       VARCHAR(255) NOT NULL,
+  to_email           VARCHAR(255) NOT NULL,
+  subject            VARCHAR(500) NOT NULL,
+  body               TEXT NOT NULL,
+  sent_at            VARCHAR(32)  NOT NULL DEFAULT '',
+  INDEX idx_company_id (company_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

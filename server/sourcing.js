@@ -1,6 +1,7 @@
 import express from "express";
 import { requireAuth } from "./auth.js";
-import { readSourced, writeSourced, readCompanies, writeCompanies } from "./store.js";
+import { listSourced, insertSourced, deleteSourced } from "./db/sourcedCompanies.js";
+import { listCompanies, insertCompany } from "./db/companies.js";
 import { searchPlaces } from "./places.js";
 import { slugify, domainOf, buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
 
@@ -18,8 +19,8 @@ router.post("/api/sourcing/search", requireAuth, async (req, res) => {
   try {
     const [{ places, nextPageToken }, sourced, companies] = await Promise.all([
       searchPlaces({ query, lat, lng, radiusMeters, pageToken }),
-      readSourced(),
-      readCompanies(),
+      listSourced(),
+      listCompanies(),
     ]);
 
     const sourcedDomains = new Set(sourced.map((s) => domainOf(s.website)));
@@ -47,7 +48,7 @@ router.post("/api/sourcing/search", requireAuth, async (req, res) => {
 });
 
 router.get("/api/sourcing", requireAuth, async (_req, res) => {
-  res.json(await readSourced());
+  res.json(await listSourced());
 });
 
 router.post("/api/sourcing", requireAuth, async (req, res) => {
@@ -56,7 +57,7 @@ router.post("/api/sourcing", requireAuth, async (req, res) => {
     return res.status(400).json({ error: "company and website are required" });
   }
 
-  const sourced = await readSourced();
+  const sourced = await listSourced();
   const domain = domainOf(body.website);
   const existing = sourced.find((s) => domainOf(s.website) === domain);
   if (existing) return res.status(200).json(existing);
@@ -83,21 +84,18 @@ router.post("/api/sourcing", requireAuth, async (req, res) => {
     searchQuery: body.searchQuery ?? "",
     createdAt: new Date().toISOString(),
   };
-  sourced.push(candidate);
-  await writeSourced(sourced);
+  await insertSourced(candidate);
   res.status(201).json(candidate);
 });
 
 router.delete("/api/sourcing/:id", requireAuth, async (req, res) => {
-  const sourced = await readSourced();
-  const next = sourced.filter((s) => s.id !== req.params.id);
-  if (next.length === sourced.length) return res.status(404).json({ error: "not found" });
-  await writeSourced(next);
+  const deleted = await deleteSourced(req.params.id);
+  if (!deleted) return res.status(404).json({ error: "not found" });
   res.status(204).end();
 });
 
 router.post("/api/sourcing/:id/promote", requireAuth, async (req, res) => {
-  const [sourced, companies] = await Promise.all([readSourced(), readCompanies()]);
+  const [sourced, companies] = await Promise.all([listSourced(), listCompanies()]);
   const candidate = sourced.find((s) => s.id === req.params.id);
   if (!candidate) return res.status(404).json({ error: "not found" });
 
@@ -113,12 +111,9 @@ router.post("/api/sourcing/:id/promote", requireAuth, async (req, res) => {
     searchQuery: candidate.searchQuery,
     contactPhone: candidate.phone,
   });
-  companies.push(company);
 
-  await Promise.all([
-    writeCompanies(companies),
-    writeSourced(sourced.filter((s) => s.id !== candidate.id)),
-  ]);
+  await insertCompany(company);
+  await deleteSourced(candidate.id);
 
   res.status(201).json(company);
 });
