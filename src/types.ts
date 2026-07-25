@@ -48,7 +48,6 @@ export interface Company {
 }
 
 export interface LetterResult {
-  analysis: string;
   subject: string;
   letter: string;
 }

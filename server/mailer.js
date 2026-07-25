@@ -1,3 +1,5 @@
+import { SIGNATURE_TEXT, SIGNATURE_HTML } from "./signature.js";
+
 const BREVO_ENDPOINT = "https://api.brevo.com/v3/smtp/email";
 
 function escapeHtml(s) {
@@ -13,7 +15,16 @@ function textToHtml(text) {
     .join("\n");
 }
 
-export async function sendMail({ to, toName, subject, text }) {
+// Appends the fixed signature to a letter body, once, so both the actual
+// send and the sent_emails log always reflect exactly what was mailed.
+export function buildEmailBody(letterText) {
+  return {
+    text: `${letterText}\n\n${SIGNATURE_TEXT}`,
+    html: `${textToHtml(letterText)}\n${SIGNATURE_HTML}`,
+  };
+}
+
+export async function sendMail({ to, toName, subject, text, html }) {
   const apiKey = process.env.BREVO_API_KEY;
   const senderEmail = process.env.CONTACT_EMAIL;
   const senderName = process.env.CONTACT_NAME;
@@ -33,7 +44,7 @@ export async function sendMail({ to, toName, subject, text }) {
       to: [{ email: to, name: toName || undefined }],
       subject,
       textContent: text,
-      htmlContent: textToHtml(text),
+      htmlContent: html,
     }),
   });
 

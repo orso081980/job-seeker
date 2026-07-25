@@ -7,7 +7,7 @@ import { detectStack } from "./stackDetect.js";
 import sourcingRouter from "./sourcing.js";
 import { startJob, getStatus, captureSingle } from "./screenshotJob.js";
 import { generateLetter } from "./letter.js";
-import { sendMail } from "./mailer.js";
+import { sendMail, buildEmailBody } from "./mailer.js";
 
 const app = express();
 app.use(express.json());
@@ -119,11 +119,13 @@ app.post("/api/companies/:id/send-letter", requireAuth, async (req, res) => {
   }
 
   try {
+    const { text, html } = buildEmailBody(letter);
     await sendMail({
       to,
       toName: test ? process.env.CONTACT_NAME : company.contactName,
-      subject: test ? `[TEST] ${subject}` : subject,
-      text: letter,
+      subject,
+      text,
+      html,
     });
     if (!test) {
       await insertSentEmail({
@@ -131,7 +133,7 @@ app.post("/api/companies/:id/send-letter", requireAuth, async (req, res) => {
         companyName: company.company,
         toEmail: to,
         subject,
-        body: letter,
+        body: text,
       });
     }
     res.json({ sent: true, test: Boolean(test), to });

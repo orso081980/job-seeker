@@ -6,6 +6,21 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 
+// Mirrors server/signature.js -- fixed, never edited per-company, appended
+// server-side at send time. Duplicated here only for the read-only preview
+// and the "Copy" button, so what you copy matches what actually gets sent.
+const SIGNATURE_TEXT = `Marco Maffei
++393926449096 🇮🇹
++32471553623 🇧🇪
+https://www.tech-paw.com/
+Tech Paw
+BE0802503665
+marco@tech-paw.com
+
+Twitter: https://x.com/MarcoMaffei3
+LinkedIn: https://www.linkedin.com/in/marco-maffei-ninja-io/
+GitHub: https://github.com/orso081980`;
+
 export default function LetterModal({
   company,
   onClose,
@@ -17,7 +32,6 @@ export default function LetterModal({
 }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [analysis, setAnalysis] = useState("");
   const [subject, setSubject] = useState("");
   const [letter, setLetter] = useState("");
   const [copied, setCopied] = useState(false);
@@ -39,7 +53,6 @@ export default function LetterModal({
     setSendError(null);
     try {
       const result = await api.generateLetter(company.id);
-      setAnalysis(result.analysis);
       setSubject(result.subject);
       setLetter(result.letter);
     } catch (e) {
@@ -56,7 +69,7 @@ export default function LetterModal({
   }, [company.id]);
 
   const copyLetter = async () => {
-    await navigator.clipboard.writeText(letter);
+    await navigator.clipboard.writeText(`${letter}\n\n${SIGNATURE_TEXT}`);
     setCopied(true);
   };
 
@@ -108,13 +121,12 @@ export default function LetterModal({
 
         {!loading && !error && (
           <>
-            {analysis && (
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 text-sm text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">
-                {analysis}
-              </div>
-            )}
             <Input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Subject" />
             <Textarea rows={16} value={letter} onChange={(e) => setLetter(e.target.value)} />
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 text-xs text-gray-500 dark:border-white/10 dark:bg-white/5 dark:text-gray-400">
+              <p className="mb-1 font-medium">Signature (appended automatically, not editable here)</p>
+              <pre className="whitespace-pre-wrap font-sans">{SIGNATURE_TEXT}</pre>
+            </div>
           </>
         )}
 
