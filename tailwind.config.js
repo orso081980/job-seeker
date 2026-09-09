@@ -40,6 +40,31 @@ export default {
         glow: "0 1px 2px rgba(16,24,20,0.06), 0 8px 20px -8px rgba(16,185,129,0.25)",
         "glow-sm": "0 1px 2px rgba(16,24,20,0.05)",
       },
+      keyframes: {
+        "card-enter": {
+          "0%": { opacity: "0", transform: "translateY(6px) scale(0.98)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "card-flash": {
+          "0%": { boxShadow: "0 0 0 0 rgba(16,185,129,0.55)" },
+          "70%": { boxShadow: "0 0 0 10px rgba(16,185,129,0)" },
+          "100%": { boxShadow: "0 0 0 0 rgba(16,185,129,0)" },
+        },
+        "toast-in": {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "row-flash": {
+          "0%": { backgroundColor: "rgba(16,185,129,0.18)" },
+          "100%": { backgroundColor: "rgba(16,185,129,0)" },
+        },
+      },
+      animation: {
+        "card-enter": "card-enter 220ms ease-out",
+        "card-flash": "card-flash 900ms ease-out",
+        "toast-in": "toast-in 200ms ease-out",
+        "row-flash": "row-flash 900ms ease-out",
+      },
     },
   },
   plugins: [],

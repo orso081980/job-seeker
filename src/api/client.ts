@@ -1,7 +1,11 @@
 import type {
   Company,
+  DbSchema,
+  EditableColumns,
   LetterResult,
   NewCompanyInput,
+  QueryResult,
+  QueryRow,
   ScreenshotJobStatus,
   SendLetterResult,
   SentEmail,
@@ -77,6 +81,18 @@ export const api = {
       body: JSON.stringify(payload),
     }),
   listSentEmails: (id: string) => request<SentEmail[]>(`/api/companies/${id}/emails`),
+  dbSchema: () => request<DbSchema>("/api/admin/schema"),
+  runQuery: (sql: string, opts?: { page?: number; pageSize?: number }) =>
+    request<QueryResult>("/api/admin/query", {
+      method: "POST",
+      body: JSON.stringify({ sql, page: opts?.page, pageSize: opts?.pageSize }),
+    }),
+  queryEditableColumns: () => request<EditableColumns>("/api/admin/query/editable-columns"),
+  updateQueryRow: (table: string, id: string, patch: QueryRow) =>
+    request<{ row: QueryRow }>("/api/admin/query/row", {
+      method: "PATCH",
+      body: JSON.stringify({ table, id, patch }),
+    }),
 };
 
 export function microlinkScreenshotUrl(website: string): string {

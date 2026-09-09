@@ -7,10 +7,16 @@ export default function KanbanBoard({
   companies,
   onOpen,
   onStatusChange,
+  savingIds,
+  flashId,
 }: {
   companies: Company[];
   onOpen: (id: string) => void;
   onStatusChange: (id: string, status: Status) => void;
+  /** Ids currently being saved to the server after a drag-and-drop move. */
+  savingIds?: Set<string>;
+  /** Id of the company whose move just finished saving successfully. */
+  flashId?: string | null;
 }) {
   const [dragOverStatus, setDragOverStatus] = useState<Status | null>(null);
 
@@ -50,6 +56,8 @@ export default function KanbanBoard({
                   onOpen={() => onOpen(c.id)}
                   draggable
                   onDragStart={(e) => e.dataTransfer.setData("text/company-id", c.id)}
+                  syncing={savingIds?.has(c.id) ?? false}
+                  justUpdated={flashId === c.id}
                 />
               ))}
               {items.length === 0 && (

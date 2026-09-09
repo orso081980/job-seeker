@@ -1,5 +1,13 @@
 import express from "express";
-import { listCompanies, findCompanyById, insertCompany, updateCompany, deleteCompany } from "./db/companies.js";
+import {
+  listCompanies,
+  findCompanyById,
+  insertCompany,
+  updateCompany,
+  deleteCompany,
+  FIELD_BY_COLUMN as COMPANY_FIELD_BY_COLUMN,
+} from "./db/companies.js";
+import { updateSourced, FIELD_BY_COLUMN as SOURCED_FIELD_BY_COLUMN } from "./db/sourcedCompanies.js";
 import { insertSentEmail, listSentEmails } from "./db/sentEmails.js";
 import { requireAuth, registerAuthRoutes } from "./auth.js";
 import { buildCompanyRecord, resolveLocationFromAddress } from "./util.js";
@@ -8,6 +16,7 @@ import sourcingRouter from "./sourcing.js";
 import { startJob, getStatus, captureSingle } from "./screenshotJob.js";
 import { generateLetter } from "./letter.js";
 import { sendMail, buildEmailBody } from "./mailer.js";
+import { runReadOnlyQuery, listSchema, fetchRawRow } from "./db/query.js";
 
 const app = express();
 app.use(express.json());
@@ -156,6 +165,79 @@ app.get("/api/detect-stack", requireAuth, async (req, res) => {
     res.json({ matches });
   } catch (e) {
     res.status(502).json({ error: `Could not fetch site: ${e.message}` });
+  }
+});
+
+app.get("/api/admin/schema", requireAuth, async (_req, res) => {
+  try {
+    res.json(await listSchema());
+  } catch (e) {
+    res.status(502).json({ error: e.message });
+  }
+});
+
+app.post("/api/admin/query", requireAuth, async (req, res) => {
+  const { sql, page, pageSize } = req.body ?? {};
+  if (typeof sql !== "string" || !sql.trim()) {
+    return res.status(400).json({ error: "sql is required" });
+  }
+  try {
+    res.json(await runReadOnlyQuery(sql, { page, pageSize }));
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
+// Backs the Query page's inline cell editor. Each editable table's update
+// function (updateCompany / updateSourced) is the same one the rest of the
+// app already trusts -- it only ever touches columns in its own hand-written
+// FIELD_BY_COLUMN map, so `id`, `created_at`, and `updated_at` can never be
+// written here no matter what the client sends.
+const EDITABLE_QUERY_TABLES = {
+  companies: { update: updateCompany, fieldByColumn: COMPANY_FIELD_BY_COLUMN },
+  sourced_companies: { update: updateSourced, fieldByColumn: SOURCED_FIELD_BY_COLUMN },
+};
+
+app.get("/api/admin/query/editable-columns", requireAuth, (_req, res) => {
+  const out = {};
+  for (const [table, config] of Object.entries(EDITABLE_QUERY_TABLES)) {
+    out[table] = Object.keys(config.fieldByColumn);
+  }
+  res.json(out);
+});
+
+app.patch("/api/admin/query/row", requireAuth, async (req, res) => {
+  const { table, id, patch } = req.body ?? {};
+  const config = typeof table === "string" ? EDITABLE_QUERY_TABLES[table] : undefined;
+  if (!config) {
+    return res.status(400).json({ error: "This table isn't editable from the query page" });
+  }
+  if (typeof id !== "string" && typeof id !== "number") {
+    return res.status(400).json({ error: "id is required" });
+  }
+  if (!patch || typeof patch !== "object" || Array.isArray(patch)) {
+    return res.status(400).json({ error: "patch is required" });
+  }
+
+  const fieldPatch = {};
+  for (const [column, value] of Object.entries(patch)) {
+    const field = config.fieldByColumn[column];
+    if (!field) {
+      return res.status(400).json({ error: `"${column}" isn't an editable column on ${table}` });
+    }
+    fieldPatch[field] = value;
+  }
+  if (Object.keys(fieldPatch).length === 0) {
+    return res.status(400).json({ error: "No editable columns in patch" });
+  }
+
+  try {
+    const updated = await config.update(String(id), fieldPatch);
+    if (!updated) return res.status(404).json({ error: "Row not found" });
+    const row = await fetchRawRow(table, String(id));
+    res.json({ row });
+  } catch (e) {
+    res.status(400).json({ error: e.message });
   }
 });
 

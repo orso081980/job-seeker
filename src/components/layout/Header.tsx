@@ -13,6 +13,7 @@ export default function Header({
   onKanbanClick,
   onProgressClick,
   onSourcingClick,
+  onQueryClick,
   onLogout,
   onLoginClick,
   onScreenshotsDone,
@@ -20,12 +21,13 @@ export default function Header({
   companyCount: number;
   jobCount: number;
   authed: boolean;
-  page: "companies-grid" | "companies-kanban" | "progress" | "sourcing";
+  page: "companies-grid" | "companies-kanban" | "progress" | "sourcing" | "query";
   onGoHome: (e: MouseEvent) => void;
   onGridClick: () => void;
   onKanbanClick: () => void;
   onProgressClick: () => void;
   onSourcingClick: () => void;
+  onQueryClick: () => void;
   onLogout: () => void;
   onLoginClick: () => void;
   onScreenshotsDone: () => void;
@@ -61,6 +63,9 @@ export default function Header({
               </button>
               <button onClick={onSourcingClick} className={navCls(page === "sourcing")}>
                 Source companies
+              </button>
+              <button onClick={onQueryClick} className={navCls(page === "query")}>
+                Query
               </button>
             </nav>
           </div>

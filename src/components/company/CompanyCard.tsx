@@ -12,22 +12,41 @@ export default function CompanyCard({
   onOpen,
   draggable = false,
   onDragStart,
+  syncing = false,
+  justUpdated = false,
 }: {
   company: Company;
   onOpen: () => void;
   draggable?: boolean;
   onDragStart?: (e: React.DragEvent) => void;
+  /** A status change for this card is being saved to the server. */
+  syncing?: boolean;
+  /** The save just completed successfully; play a brief confirmation cue. */
+  justUpdated?: boolean;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
   const languages = parseTagList(company.languages);
 
   return (
     <div
-      draggable={draggable}
+      draggable={draggable && !syncing}
       onDragStart={onDragStart}
       onClick={onOpen}
-      className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-150 hover:border-brand-300 hover:shadow-glow dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700/60"
+      className={`group relative animate-card-enter cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-150 hover:border-brand-300 hover:shadow-glow dark:border-white/10 dark:bg-white/5 dark:hover:border-brand-700/60 ${
+        syncing ? "opacity-60" : ""
+      } ${justUpdated ? "animate-card-flash" : ""}`}
     >
+      {syncing && (
+        <div className="absolute left-2 top-2 z-10 flex items-center gap-1.5 rounded-full bg-black/70 px-2 py-1 text-[11px] font-medium text-white backdrop-blur-sm">
+          <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+          Moving…
+        </div>
+      )}
+      {!syncing && justUpdated && (
+        <div className="absolute left-2 top-2 z-10 flex items-center gap-1 rounded-full bg-brand-600 px-2 py-1 text-[11px] font-medium text-white">
+          ✓ Moved
+        </div>
+      )}
       <div className="aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-white/10">
         {!imgFailed ? (
           <img

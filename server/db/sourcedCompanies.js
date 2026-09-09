@@ -49,6 +49,25 @@ function fromRow(r) {
   };
 }
 
+// `id` and `created_at` are deliberately absent -- never user-editable (see
+// FIELD_BY_COLUMN below, used by the admin Query page's inline cell editor).
+const COLUMN_BY_FIELD = {
+  placeId: "place_id",
+  company: "company",
+  website: "website",
+  city: "city",
+  country: "country",
+  industry: "industry",
+  address: "address",
+  phone: "phone",
+  mapsUrl: "maps_url",
+  searchQuery: "search_query",
+};
+
+export const FIELD_BY_COLUMN = Object.fromEntries(
+  Object.entries(COLUMN_BY_FIELD).map(([field, column]) => [column, field])
+);
+
 function requirePool() {
   const pool = getPool();
   if (!pool) throw new Error("DATABASE_URL is not configured");
@@ -60,12 +79,35 @@ export async function listSourced() {
   return rows.map(fromRow);
 }
 
+export async function findSourcedById(id) {
+  const [rows] = await requirePool().query("SELECT * FROM sourced_companies WHERE id = ? LIMIT 1", [id]);
+  return rows[0] ? fromRow(rows[0]) : null;
+}
+
 export async function insertSourced(candidate) {
   await requirePool().query(
     `INSERT INTO sourced_companies (${COLUMNS.join(", ")}) VALUES (${COLUMNS.map(() => "?").join(", ")})`,
     toRow(candidate)
   );
   return candidate;
+}
+
+// Partial update: only columns present as keys in `patch` are touched.
+// Returns the fresh row, or null if no sourced company has this id.
+export async function updateSourced(id, patch) {
+  const entries = Object.entries(patch).filter(([key]) => key in COLUMN_BY_FIELD);
+  if (entries.length === 0) return findSourcedById(id);
+
+  const assignments = entries.map(([key]) => `${COLUMN_BY_FIELD[key]} = ?`);
+  const values = entries.map(([, value]) => value);
+  values.push(id);
+
+  const [result] = await requirePool().query(
+    `UPDATE sourced_companies SET ${assignments.join(", ")} WHERE id = ?`,
+    values
+  );
+  if (result.affectedRows === 0) return null;
+  return findSourcedById(id);
 }
 
 export async function deleteSourced(id) {

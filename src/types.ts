@@ -135,3 +135,32 @@ export interface SourcedCompany {
   searchQuery: string;
   createdAt: string;
 }
+
+// Raw DB rows, as returned by the admin Query page -- deliberately untyped
+// beyond "JSON-ish value" since the whole point is running arbitrary SELECTs.
+export type QueryRow = Record<string, unknown>;
+
+export interface QueryResult {
+  columns: string[];
+  rows: QueryRow[];
+  page: number;
+  pageSize: number;
+  totalRows: number;
+  totalPages: number;
+  /** False for SHOW/DESCRIBE/EXPLAIN, which can't be paged over. */
+  paginated: boolean;
+  /** Set when every row maps 1:1 to a real row of this table -- lets the
+   *  grid offer inline editing. Null for joins, aggregates, or tables that
+   *  aren't editable at all (e.g. the sent_emails log). */
+  editableTable: string | null;
+}
+
+/** Per table (raw DB column names), which columns the inline editor may write to. */
+export type EditableColumns = Record<string, string[]>;
+
+export interface SchemaColumn {
+  name: string;
+  type: string;
+}
+
+export type DbSchema = Record<string, SchemaColumn[]>;

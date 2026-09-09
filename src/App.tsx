@@ -11,13 +11,28 @@ import CompanyDrawer from "./components/company/CompanyDrawer";
 import AddCompanyModal from "./components/company/AddCompanyModal";
 import LoginModal from "./components/auth/LoginModal";
 import SourcingPage from "./components/sourcing/SourcingPage";
+import QueryPage from "./components/query/QueryPage";
 import Pagination from "./components/ui/Pagination";
+import ErrorToast from "./components/ui/ErrorToast";
 
 const HOME_PAGE_SIZE = 28;
 
 export default function App() {
-  const { companies, loading, error, create, update, remove, addLocal, replaceLocal, reload } =
-    useCompanies();
+  const {
+    companies,
+    loading,
+    error,
+    create,
+    update,
+    remove,
+    addLocal,
+    replaceLocal,
+    reload,
+    savingIds,
+    flashId,
+    updateError,
+    clearUpdateError,
+  } = useCompanies();
   const { authed, login, logout } = useAuth();
 
   const progressCompanies = companies.filter((c) => c.status !== "new");
@@ -25,9 +40,9 @@ export default function App() {
   const home = useCompanyFilters(companies);
   const progress = useCompanyFilters(progressCompanies);
 
-  const [page, setPage] = useState<"companies-grid" | "companies-kanban" | "progress" | "sourcing">(
-    "companies-grid"
-  );
+  const [page, setPage] = useState<
+    "companies-grid" | "companies-kanban" | "progress" | "sourcing" | "query"
+  >("companies-grid");
   const [progressView, setProgressView] = useState<"grid" | "kanban">("grid");
   const [homePage, setHomePage] = useState(1);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -79,6 +94,7 @@ export default function App() {
         onKanbanClick={() => setPage("companies-kanban")}
         onProgressClick={() => setPage("progress")}
         onSourcingClick={() => (authed ? setPage("sourcing") : setLoginOpen(true))}
+        onQueryClick={() => (authed ? setPage("query") : setLoginOpen(true))}
         onLogout={handleLogout}
         onLoginClick={() => setLoginOpen(true)}
         onScreenshotsDone={reload}
@@ -120,6 +136,8 @@ export default function App() {
                 companies={home.filtered}
                 onOpen={setSelectedId}
                 onStatusChange={(id, status) => update(id, { status })}
+                savingIds={savingIds}
+                flashId={flashId}
               />
             )}
           </main>
@@ -147,6 +165,8 @@ export default function App() {
                 companies={progress.filtered}
                 onOpen={setSelectedId}
                 onStatusChange={(id, status) => update(id, { status })}
+                savingIds={savingIds}
+                flashId={flashId}
               />
             )}
           </main>
@@ -156,6 +176,12 @@ export default function App() {
       {page === "sourcing" && (
         <main className="flex-1">
           <SourcingPage onPromoted={addLocal} />
+        </main>
+      )}
+
+      {page === "query" && (
+        <main className="flex-1">
+          <QueryPage />
         </main>
       )}
 
@@ -181,6 +207,13 @@ export default function App() {
           onLoggedIn={() => {
             setLoginOpen(false);
           }}
+        />
+      )}
+
+      {updateError && (
+        <ErrorToast
+          message={`Couldn't move "${updateError.company}": ${updateError.message}. Reverted to its previous status.`}
+          onDismiss={clearUpdateError}
         />
       )}
     </div>

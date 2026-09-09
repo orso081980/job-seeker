@@ -32,7 +32,10 @@ const COLUMNS = [
 
 // Maps a Company (camelCase, as used everywhere in JS) to the matching
 // MySQL column name, so PATCH-style partial updates can be built generically.
-const COLUMN_BY_FIELD = {
+// `id`, `created_at`, and `updated_at` are deliberately absent -- they're
+// never user-editable (see FIELD_BY_COLUMN below, used to validate the
+// admin Query page's inline cell editor).
+export const COLUMN_BY_FIELD = {
   company: "company",
   website: "website",
   city: "city",
@@ -58,6 +61,13 @@ const COLUMN_BY_FIELD = {
   screenshotUrl: "screenshot_url",
   screenshotUpdatedAt: "screenshot_updated_at",
 };
+
+// Reverse of the above: raw MySQL column name -> camelCase field. Used by the
+// admin Query page's inline cell editor to check a column is really editable
+// before writing to it (see server/app.js's PATCH /api/admin/query/row).
+export const FIELD_BY_COLUMN = Object.fromEntries(
+  Object.entries(COLUMN_BY_FIELD).map(([field, column]) => [column, field])
+);
 
 function toRow(c) {
   return [
